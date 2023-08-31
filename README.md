@@ -1,5 +1,5 @@
 # PUI:E homework
 
-Deployed website: `add the URL to your deployed website`
+Deployed website: https://kavyaiyerr.github.io/pui-homework-template-advanced/
 
-Repository link: `add the URL to this repository`
+Repository link: https://github.com/kavyaiyerr/pui-homework-template-advanced/
