@@ -1,0 +1,188 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Futura", sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+header {
+    display: flex;
+}
+
+hr {
+    height: 5px;
+    background-color: black;
+}
+
+nav {
+    display: flex;
+    margin-top: 50px;
+    margin-left: 800px;
+
+}
+
+nav a{
+    margin-right: 70px;
+}
+
+select {
+    margin: 23px;
+    padding-left: 5px;
+    height: 40px;
+    width: 250px;
+    background-color: white;
+    border: 2px solid black;
+    font-size: medium;
+    font-family: "Futura", sans-serif;
+}
+
+
+.cart-button {
+    margin: 23px;
+    height: 40px;
+    width: 250px;
+    background-color: white;
+    border: 2px solid black;
+    font-weight: bold;
+    font-size: large;
+    font-family: "Futura", sans-serif;
+}
+
+.description{
+    margin-bottom: 50px;
+}
+.item{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 50px;
+}
+
+
+.glazing{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.item-image{
+    width: 350px;
+    border: 3px solid black;
+}
+
+.item-title {
+    font-weight: normal;
+}
+
+.nav-image {
+    width: 400px;
+    padding: 20px;
+}
+
+.nav-text {
+    width: calc(100% - 400px);
+}
+
+.nav-links {
+    display: flex;
+    justify-content: space-evenly;
+    margin-left: 500px;
+    font-size: large;
+}
+
+.pack {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.radio-buttons {
+    display: flex;
+    justify-content: left;
+    margin-right: 15px;
+}
+
+.radio-buttons label {
+    justify-content: space-evenly;
+    width: 40px;
+    height: 40px;
+    margin: 0 10px 0 10px;
+    padding-left: 10px;
+    padding-top: 8px;
+    background-color: white;
+    border: 2px solid black;
+}
+
+
+.radio-buttons input[type="radio"] {
+    display:none;
+
+}
+
+.radio-buttons input[type="radio"]:checked+label {
+    background-color: grey;
+}
+
+
+.page{
+    /* padding: 50px; */
+    margin-top: 20px;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+    font-size: 30px;
+}
+
+.price {
+    font-weight: bold;
+    font-size: large;
+}
+
+.purchase {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.row {
+    display: flex;
+    margin-left: 415px;
+    justify-content: center;
+}
+
+.description {
+    display: block;
+    padding-top: 30px;
+    font-weight: normal;
+   
+}
+
+.cart-button:hover{
+    background-color: yellow;
+}
+
+.header-text {
+    display: block;
+
+}
+
+.pack-button:active {
+    background-color: grey;
+    border: 2px solid black;
+}
+
+.page:visited {
+    text-decoration: none;
+}
+
+.nav-links a:hover {
+    background-color: yellow;
+    font-weight: bold;
+}
+
+
