@@ -180,7 +180,7 @@ select {
     text-decoration: none;
 }
 
-.nav-links a:hover {
+nav a:hover {
     background-color: yellow;
     font-weight: bold;
 }
