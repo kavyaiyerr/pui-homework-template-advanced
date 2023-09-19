@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head> 
+    <title> Bun Bun bake shop</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href = "css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src = "script.js" defer></script>
+  </head>
+
+  <body>
+  <!-- logo/navigation/header -->
+  <header>
+    <img class = "nav-image" src = "../assets/logo/logo-01.svg" alt = "Bun Bun bake shop logo"/>
+  
+    <div id = "header-text">
+      <nav>
+        <div id = "link1"> 
+          <a class = "page" id = "products" href = "index.html"> Products </a>
+        </div>
+        <div id = "link2">
+          <a class = "page" id = "cart" href = "#"> Cart </a>
+          <div id = "carttext">
+            <p id = "cartitems"> 0 items </p>
+            <p id = "carttotal"> $0.00</p>
+          </div>
+        </div>
+      </nav>
+
+
+      <hr>
+      <h1 class = "description">Our hand-made cinnamon rolls</h1>
+    </div>
+  </header>
+
+<!-- popup -->
+<div class="popup">
+    <span class="popuptext" id="myPopup">
+        <p id = "addedtocart"> Added to cart: </p>
+        <div id = "cartItemsDisplay">
+          <!-- Javascript will populate items in cart -->
+        </div>
+    </span>
+</div>
+  
+<!-- all the products -->
+
+    <!-- row one which contains three products -->
+    <div class = "row">
+      
+      <!-- cinnamon roll -->
+      <div class = "item" id = "original">
+        
+        <!-- product image -->
+        <img class = "item-image" src = "../assets/products/original-cinnamon-roll.jpg" alt = "cinnamon roll"/>
+        
+        <!-- product name -->
+        <h2 class = "item-title"> Original cinnamon roll</h2>
+
+        <!-- glazing options dropdown -->
+        <div class = "glazing">
+          <p class = "label-text"> Glazing: </p>
+          <select class = "dropdown" name = "glazing-options" id = "glazing-options-1" onchange = "priceChange(this)">
+            <!-- Javascript will populate options here-->
+          </select>
+        </div>
+
+        <!-- pack size options -->
+        <div class = "pack" id = "pack-options-1">
+          <p class = "label-text">Pack size:</p>
+
+          <div class = "radio-buttons" onclick = "priceChange(this)">
+            <!-- Javascript will populate buttons here -->
+          </div>
+        </div>
+
+        <!-- price details & add to cart button -->
+        <div class = "purchase">
+          <p class = "price" id = "original-base-price"> $2.49 </p>
+          <div>
+            <button class="button cart-button" onclick="addToCart(this)"> Add to cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- apple cinnamon roll -->
+      <div class = "item" id = "apple">
+
+        <!-- product image -->
+        <img class = "item-image" src = "../assets/products/apple-cinnamon-roll.jpg" alt = "apple cinnamon roll"/>
+
+        <!-- product name -->
+        <h2 class = "item-title"> Apple cinnamon roll</h2>
+
+        <!-- glazing options -->
+        <div class = "glazing">
+          <p class = "label-text"> Glazing: </p>
+          <select class = "dropdown" name = "glazing-options" id = "glazing-options-2" onchange = "priceChange(this)">
+            <!-- Javascript will populate options here-->
+          </select>
+        </div>
+        
+        <!-- pack size options -->
+        <div class = "pack" id = "pack-options-2">
+          <p class = "label-text">Pack size:</p>
+
+          <div class = "radio-buttons" onclick = "priceChange(this)">
+            <!-- Javascript will populate options here-->
+          </div>
+        </div>
+
+        <!-- price details & add to cart button -->
+        <div class = "purchase">
+          <p class = "price" id = "apple-base-price"> $3.49 </p>
+          <div>
+            <button class="button cart-button" onclick="addToCart(this)"> Add to cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- raisin cinnamon roll -->
+      <div class = "item" id = "raisin">
+
+        <!-- product image -->
+        <img class = "item-image" src = "../assets/products/raisin-cinnamon-roll.jpg" alt = "raisin cinnamon roll"/>
+        
+        <!-- product name -->
+        <h2 class = "item-title"> Raisin cinnamon roll</h2>
+
+        <!-- glazing options -->
+        <div class = "glazing">
+          <p class = "label-text"> Glazing: </p>
+          <select class = "dropdown" name = "glazing-options" id = "glazing-options-3" onchange = "priceChange(this)">
+            <!-- Javascript will populate options here-->
+          </select>
+        </div>
+
+        <!-- pack size options -->
+        <div class = "pack" id = "pack-options-3">
+          <p class = "label-text">Pack size:</p>
+
+          <div class = "radio-buttons" onclick = "priceChange(this)">
+            <!-- Javascript will populate options here-->
+          </div>
+        </div>
+
+        <!-- price details & add to cart button -->
+        <div class = "purchase">
+          <p class = "price" id = "raisin-base-price"> $2.99 </p>
+          <div>
+            <button class="button cart-button" onclick="addToCart(this)"> Add to cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- row two which contains three products -->
+    <div class = "row">
+
+      <!-- walnut cinnamon roll -->
+      <div class = "item" id = "walnut">
+
+        <!-- product image -->
+        <img class = "item-image" src = "../assets/products/walnut-cinnamon-roll.jpg" alt = "walnut cinnamon roll"/>
+        
+        <!-- product title -->
+        <h2 class = "item-title"> Walnut cinnamon roll</h2>
+
+        <!-- glazing options -->
+        <div class = "glazing">
+          <p class = "label-text"> Glazing: </p>
+          <select class = "dropdown" name = "glazing-options" id = "glazing-options-4" onchange = "priceChange(this)">
+            <!-- Javascript will populate options here-->
+          </select>
+        </div>
+
+        <!-- pack size options -->
+        <div class = "pack" id = "pack-options-4">
+          <p class = "label-text">Pack size:</p>
+
+          <div class = "radio-buttons" onclick = "priceChange(this)">
+            <!-- Javascript will populate options here-->
+          </div>
+        </div>
+
+        <!-- price details & add to cart button -->
+        <div class = "purchase">
+          <p class = "price" id = "walnut-base-price"> $3.49 </p>
+          <div>
+            <button class="button cart-button" onclick="addToCart(this)"> Add to cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- chocolate cinnamon roll -->
+      <div class = "item" id = "chocolate">
+
+        <!-- product image -->
+        <img class = "item-image" src = "../assets/products/double-chocolate-cinnamon-roll.jpg" alt = "chocolate cinnamon roll"/>
+
+        <!-- product title -->
+        <h2 class = "item-title"> Double chocolate cinnamon roll</h2>
+
+        <!-- glazing options -->
+        <div class = "glazing">
+          <p class = "label-text"> Glazing: </p>
+          <select class = "dropdown" name = "glazing-options" id = "glazing-options-5" onchange = "priceChange(this)">
+            <!-- Javascript will populate options here-->
+          </select>
+        </div>
+
+
+        <!-- pack size options -->
+        <div class = "pack" id = "pack-options-5">
+          <p class = "label-text">Pack size:</p>
+
+          <div class = "radio-buttons" onclick = "priceChange(this)">
+            <!-- Javascript will populate options here-->
+          </div>
+        </div>
+
+        <!-- price details & add to cart button -->
+        <div class = "purchase">
+          <p class = "price" id = "chocolate-base-price"> $3.99 </p>
+          <div>
+            <button class="button cart-button" onclick="addToCart(this)"> Add to cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- strawberry cinnamon roll -->
+      <div class = "item" id = "strawberry">
+
+        <!-- product image -->
+        <img class = "item-image" src = "../assets/products/strawberry-cinnamon-roll.jpg" alt = "strawberry cinnamon roll"/>
+
+        <!-- product title -->
+        <h2 class = "item-title"> Strawberry cinnamon roll</h2>
+
+        <!-- glazing options -->
+        <div class = "glazing">
+          <p class = "label-text"> Glazing: </p>
+          <select class = "dropdown" name = "glazing-options" id = "glazing-options-6" onchange = "priceChange(this)">
+            <!-- Javascript will populate options here-->
+          </select>
+        </div>
+
+        <!-- pack size options -->
+        <div class = "pack" id = "pack-options-6">
+          <p class = "label-text">Pack size:</p>
+
+          <div class = "radio-buttons" onclick = "priceChange(this)">
+            <!-- Javascript will populate options here-->
+          </div>
+        </div>
+
+        <!-- price details & add to cart button -->
+        <div class = "purchase">
+          <p class = "price" id = "strawberry-base-price"> $3.99 </p>
+          <div>
+            <button class="button cart-button" onclick="addToCart(this)"> Add to cart</button>
+          </div>
+        </div>
+      </div>
+
+
+
+    </div>
+    
+  </body>
+</html>

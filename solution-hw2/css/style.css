@@ -1,0 +1,226 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Futura", sans-serif;
+    width: 1200px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+header {
+    display: flex;
+}
+
+hr {
+    height: 5px;
+    background-color: black;
+}
+
+nav {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 50px;
+
+}
+
+nav a{
+    margin-right: 50px;
+}
+
+select {
+    margin: 23px;
+    padding-left: 5px;
+    height: 40px;
+    width: 250px;
+    background-color: white;
+    border: 2px solid black;
+    font-size: medium;
+    font-family: "Futura", sans-serif;
+}
+
+
+.cart-button {
+    margin: 23px;
+    height: 40px;
+    width: 250px;
+    background-color: white;
+    border: 2px solid black;
+    font-weight: bold;
+    font-size: large;
+    font-family: "Futura", sans-serif;
+}
+
+.description{
+    margin-bottom: 50px;
+}
+
+.item{
+    display: flex;
+    flex-direction: column;
+}
+
+
+.glazing{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.item-image{
+    width: 350px;
+    border: 3px solid black;
+}
+
+.item-title {
+    font-weight: normal;
+}
+
+.nav-image {
+    width: 400px;
+    padding: 20px;
+    flex-grow:0;
+}
+
+.nav-text {
+    width: calc(100% - 400px);
+}
+
+.pack {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.radio-buttons {
+    display: flex;
+    justify-content: left;
+    margin-right: 15px;
+}
+
+.radio-buttons label {
+    justify-content: space-evenly;
+    width: 40px;
+    height: 40px;
+    margin: 0 10px 0 10px;
+    padding-left: 10px;
+    padding-top: 8px;
+    background-color: white;
+    border: 2px solid black;
+}
+
+
+.radio-buttons input[type="radio"] {
+    display:none;
+
+}
+
+.radio-buttons input[type="radio"]:checked+label {
+    background-color: grey;
+}
+
+
+.page{
+    /* padding: 50px; */
+    margin-top: 20px;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+    font-size: 30px;
+}
+
+.price {
+    font-weight: bold;
+    font-size: large;
+}
+
+.purchase {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.row {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.description {
+    display: block;
+    padding-top: 30px;
+    font-weight: normal;
+   
+}
+
+.cart-button:hover{
+    background-color: yellow;
+}
+.header {
+    width: 1200px;
+}
+
+#header-text {
+    display: block;
+    flex-grow: 1;
+}
+
+.pack-button:active {
+    background-color: grey;
+    border: 2px solid black;
+}
+
+.page:visited {
+    text-decoration: none;
+}
+
+nav a:hover {
+    background-color: yellow;
+    font-weight: bold;
+}
+
+#carttext {
+    text-align: right;
+    padding-right: 57px;
+}
+
+#addedtocart {
+    margin-bottom: 25px;
+}
+
+.cartTitle {
+    font-size: 110%;
+    font-weight: bold;
+
+}
+/* Popup container */
+.popup {
+    position: absolute;
+    left: 840px;
+    top: 90px;
+    display: inline-block;
+    cursor: pointer;
+  }
+  
+  /* The actual popup (appears on top) */
+  .popup .popuptext {
+    visibility: hidden;
+    width: 320px;
+    background-color: white;
+    color: black;
+    border: 2px solid black;
+    text-align: left;
+    padding: 8px;
+    position: absolute;
+    left: 50%;
+  }
+  
+  /* Toggle this class when clicking on the popup container (hide and show the popup) */
+  .popup .show {
+    visibility: visible;
+  }
+
