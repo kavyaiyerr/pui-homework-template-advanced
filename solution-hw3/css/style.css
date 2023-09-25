@@ -131,11 +131,14 @@ select {
 .item_cart_text {
     margin: 50px;
     margin-left: 0px;
+    margin-top: 100px;
     width: 480px;
+    font-size: 120%;
 }
 
 .item_cart_price {
     width: 50px;
+    font-size: 120%;
     margin-top: 150px;
     text-align: right;
 }
@@ -154,6 +157,7 @@ select {
 
 .item-title {
     font-weight: normal;
+    margin-bottom: 0px;
 }
 
 .nav-image {
@@ -174,7 +178,6 @@ select {
 
 
 .page{
-    /* padding: 50px; */
     margin-top: 20px;
     margin-bottom: 50px;
     text-transform: uppercase;
@@ -182,7 +185,6 @@ select {
 }
 
 .price {
-    font-weight: bold;
     font-size: large;
 }
 
@@ -225,10 +227,12 @@ select {
 }
 
 .price_details {
+    font-size: 120%;
     display: flex;
 }
 
 .remove {
+    font-size: 120%;
     font-weight: bold;
     text-decoration: underline;
 }

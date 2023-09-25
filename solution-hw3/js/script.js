@@ -127,7 +127,6 @@ function glazingChange(element) {
     
     //calculate new price
     let newPrice = ((parseFloat(priceChange) + 2.49)*packValue).toFixed(2);
-    console.log(newPrice);
 
     //update price text based on glazing
     element.parentElement.parentElement.querySelector('.price').innerHTML = '$'+newPrice;
@@ -141,10 +140,8 @@ function packChange(element) {
     //get value of selected pack size option
     packValue = element.value;
 
-    console.log(packValue);
-
     //calculate price with glazing + pack size
-    let updatedPrice = (glazingChange(document.querySelector('#glazing-dropdown'))).toFixed(2);
+    let updatedPrice = (glazingChange(document.querySelector('#glazing-dropdown')));
 
     //update price text based on glazing & pack size
      document.querySelector('.price').innerHTML = '$'+updatedPrice;
