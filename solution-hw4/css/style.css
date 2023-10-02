@@ -85,13 +85,17 @@ select {
 
 }
 
-.description{
+.description-products{
+    display: block;
+    padding-top: 30px;
     margin-bottom: 50px;
+    font-weight: normal;
 }
 
 .description {
     display: block;
     padding-top: 30px;
+    margin-bottom: 50px;
     font-weight: normal;
    
 }
