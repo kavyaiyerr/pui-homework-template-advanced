@@ -108,7 +108,7 @@ function glazingChange(element) {
     let priceChange = element.value;
     
     //calculate new price
-    let newPrice = ((parseFloat(priceChange) + 2.49)*packValue).toFixed(2);
+    let newPrice = ((parseFloat(priceChange) + parseFloat(`$${rollData.basePrice.toFixed(2)}`.substring(1)))*packValue).toFixed(2);
 
     //update price text based on glazing
     element.parentElement.parentElement.querySelector('.price').innerHTML = '$'+newPrice;
