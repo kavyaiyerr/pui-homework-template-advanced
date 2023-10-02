@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head> 
+    <title> Bun Bun bake shop</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href = "../css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src = "../js/rollsData.js" defer></script>
+    <script src = "../js/script.js" defer></script>
+  </head>
+
+  <body>
+  <!-- logo/navigation/header -->
+  <header>
+    <img class = "nav-image" src = "../../assets/logo/logo-01.svg" alt = "Bun Bun bake shop logo"/>
+  
+    <div id = "header-text">
+      <nav>
+        <div id = "link1"> 
+          <a class = "page" id = "products" href = "../index.html"> Products </a>
+        </div>
+        <div id = "link2">
+          <a class = "page" id = "cart" href = "../html/cart.html"> Cart </a>
+        </div>
+      </nav>
+
+
+      <hr>
+      <h1 class = "description"> <!-- JS will populate roll name--> </h1>
+    </div>
+  </header>
+
+  
+    <!-- page body -->
+
+    <div class = "row">
+      
+      <!-- cinnamon roll image -->
+      <div id = "original_image">
+        <img class = "item_detail_image"  alt = "cinnamon roll"/> <!-- JS will populate image -->
+      </div>
+
+      <!-- text + dropdown menus + price + add to cart button -->
+      <div class = "right-column">
+
+        <p class = "product_detail_text" id = "original_text">
+            Customize our delicious, hand-made cinnamon roll to your liking!
+        </p>
+
+        <!-- glazing options dropdown -->
+        <div class = "glazing">
+            <p class = "label-text"> Glazing: </p>
+            <select class = "dropdown" id = "glazing-dropdown" name = "glazing-options" onchange = "glazingChange(this)">
+              <!-- Javascript will populate options here-->
+            </select>
+        </div>
+
+        <!-- pack size options dropdown -->
+        <div class = "packsize">
+            <p class = "label-text"> Pack size: </p>
+            <select class = "dropdown" id = "packsize-dropdown" name = "pack-size-options" onchange = "packChange(this)">
+              <!-- Javascript will populate options here-->
+            </select>
+        </div>
+
+         <!-- price details & add to cart button -->
+        <div class = "purchase">
+            <p class = "price"> <!-- JS will populate price --> </p>
+            <div>
+              <button class="button cart-button" onclick = "addToCart(this)"> Add to cart</button>
+            </div>
+        </div>
+
+
+      </div>
+
+    </div>
+    
+  </body>
+</html>
