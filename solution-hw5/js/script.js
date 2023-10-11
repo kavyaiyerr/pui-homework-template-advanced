@@ -1,27 +1,3 @@
-class Roll {
-    constructor(rollType, rollGlazing, packSize, basePrice) {
-        this.type = rollType;
-        this.glazing = rollGlazing;
-        this.size = packSize;
-        this.basePrice = basePrice;
-    }
-}
-
-const cart = [];
-
-const queryString = window.location.search;
-const params = new URLSearchParams(queryString);
-const rollType = params.get('roll');
-
-//access roll data from the rolls object using rollType
-const rollData = rolls[rollType];
-
-//populate roll name, image, description, and price dynamically
-document.querySelector('.description').textContent = rollType + " Cinnamon Roll";
-document.querySelector('.item_detail_image').src = '../../assets/products/' + rollData["imageFile"];
-document.querySelector('.price').textContent = '$' + rollData["basePrice"].toFixed(2);
-
-//rest of JS code (from HW3)
 //list of glazing price adaptation objects
 const glazingPriceAdaptations = [
     {
@@ -49,18 +25,6 @@ const glazingPriceAdaptations = [
     },
 ]
 
-//populate glazing dropdown dynamically
-const glazingDropdown = document.querySelector('#glazing-dropdown');
-
-
-//Loop through glazing adaptation array to populate og dropdown
-for (let i = 0; i < glazingPriceAdaptations.length; i++) {
-    const option = document.createElement('option');
-    option.value = glazingPriceAdaptations[i].adjustment; // Use adjustment as the option value
-    option.text = glazingPriceAdaptations[i].name; // Use name as the displayed option text
-    glazingDropdown.appendChild(option);
-}
-
 //list of pack size price adaptation objects
 const packPriceAdaptations = [
     {
@@ -87,6 +51,63 @@ const packPriceAdaptations = [
 
     },
 ]
+
+
+
+const queryString = window.location.search;
+const params = new URLSearchParams(queryString);
+const rollType = params.get('roll');
+
+//access roll data from the rolls object using rollType
+const rollData = rolls[rollType];
+
+
+class Roll {
+    constructor(rollType, rollGlazing, packSize, basePrice) {
+        this.type = rollType;
+        this.glazing = rollGlazing;
+        this.size = packSize;
+        this.basePrice = basePrice;
+        let glazingChange;
+        for (const glazing of glazingPriceAdaptations) {
+            if (glazing.name === rollGlazing) {
+                glazingChange = glazing.adjustment;
+                break;
+            }
+        }
+        let packChange;
+        for (const pack of packPriceAdaptations) {
+            if (pack.name === packSize) {
+                packChange = pack.adjustment;
+                break;
+            }
+        }
+
+        this.calcPrice = ((parseFloat(basePrice) + parseFloat(glazingChange))*parseFloat(packChange)).toFixed(2);
+    }
+}
+
+let cart = [];
+
+
+//populate roll name, image, description, and price dynamically on product details page
+document.querySelector('.description').textContent = rollType + " Cinnamon Roll";
+document.querySelector('.item_detail_image').src = '../../assets/products/' + rollData["imageFile"];
+document.querySelector('.price').textContent = '$' + rollData["basePrice"].toFixed(2);
+
+//rest of JS code (from HW3)
+//populate glazing dropdown dynamically
+const glazingDropdown = document.querySelector('#glazing-dropdown');
+
+
+//Loop through glazing adaptation array to populate og dropdown
+for (let i = 0; i < glazingPriceAdaptations.length; i++) {
+    const option = document.createElement('option');
+    option.value = glazingPriceAdaptations[i].adjustment; // Use adjustment as the option value
+    option.text = glazingPriceAdaptations[i].name; // Use name as the displayed option text
+    glazingDropdown.appendChild(option);
+}
+
 
 //populate pack size dropdown dynamically
 const packDropdown = document.querySelector('#packsize-dropdown');

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head> 
+    <title> Bun Bun bake shop</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href = "../css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src = "../js/rollsData.js" defer></script>
+    <script src = "../js/hw5.js" defer></script>
+  </head>
+
+  <body>
+  <!-- logo/navigation/header -->
+  <header>
+    <img class = "nav-image" src = "../../assets/logo/logo-01.svg" alt = "Bun Bun bake shop logo"/>
+  
+    <div id = "header-text">
+      <nav>
+        <div id = "link1"> 
+          <a class = "page" id = "products" href = "../index.html"> Products </a>
+        </div>
+        <div id = "link2">
+          <a class = "page" id = "cart" href = "#"> Cart </a>
+        </div>
+      </nav>
+
+
+      <hr>
+      <h1 class = "description">Our handmade cinnamon rolls</h1>
+    </div>
+  </header>
+
+  
+    <!-- page body -->
+    <div class = "entire_page">
+      <div class = "cart-display">
+      <template class = "cart">
+        <div class = "cart_item">
+        
+          <!-- cinnamon roll image -->
+          <div class = "image_and_remove">
+            <div>
+              <img class = "item_cart_image" alt = "cinnamon roll"/>
+            </div>
+            <div>
+            <a class = "remove"> Remove </a>
+            </div>
+          </div>
+    
+          <!-- text -->
+          <div class = "item_cart_text">
+            <p class = "item_cart_title"> </p>
+            <p class = "item_cart_glazing"> </p>
+            <p class = "item_cart_packsize"> </p>
+          </div>
+    
+          <div class = "item_cart_price">
+            <p>  </p>
+          </div>
+    
+        </div>
+  
+      </template>
+    </div>
+  
+      <div id = "checkout_section">
+          <hr>
+          <div class = "price_details">
+              <p class = "total_text"> Total: </p>
+              <p class = "total_price"> $0.00 </p>
+          </div>
+          <div>
+              <button class="button checkout-button"> Checkout</button>
+          </div>
+  
+      </div>
+
+    </div>
+    
+  </body>
+</html>
