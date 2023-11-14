@@ -12,17 +12,24 @@ body {
     background: linear-gradient(to bottom, #83a2b3, #8C7DBB, #dfba9a); /* You can adjust the colors and direction as needed */
 }
 
-.page-header {
-    position: relative;
-    width: 350px; /* Set the width of the container */
-  }
+button {
+    width: 250px;
+    height: 60px;
+    background-color: #666666;
+}
 
-.microphone-image {
-    width: 90%;
-    height: auto;
-    display: block;
-    opacity: 50%;
-  }
+input {
+    width: 250px;
+    height: 60px;
+    border: 5px solid rgb(255, 255, 255);
+
+}
+
+.directions {
+    color: #ffffff;
+    font-size: 24px;
+
+}
 
 .left-rectangle, .right-rectangle {
     position: absolute;
@@ -38,26 +45,43 @@ body {
   }
 
 .left-rectangle {
-    top: 100px;
-    left: -90px;
-    width: 300px;
-    height: 75px;
+    top: 150px;
+    left: -215px;
+    width: 500px;
+    height: 90px;
     border-left: 90px solid rgb(255, 255, 255); /* Right border for the left rectangle */
     outline: 10px solid rgb(255, 255, 255); /* Thick left stroke for the left rectangle */
     outline-offset: -2px; /* Adjust the offset to align with the border */
-}
+ }
 
-.right-rectangle {
-    top: 130px;
-    left: 208px;
-    width: 200px;
-    height: 75px;
-    border: 10px solid rgb(255, 255, 255);
-}
+.microphone-image {
+    width: 120%;
+    height: auto;
+    display: block;
+    opacity: 50%;
+  }
 
 .page-title {
     color: #ffffff;
-    font-size: 40px;
+    font-size: 60px;
     font-weight: bold;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Add drop shadow to the text */
+}
+
+.page-header {
+    position: relative;
+    width: 350px; /* Set the width of the container */
+    margin-top: 0px;
   }
+
+.right-rectangle {
+    top: 200px;
+    left: 250px;
+    width: 350px;
+    height: 90px;
+    border: 10px solid rgb(255, 255, 255);
+}
+
+.user-options {
+    margin: 100px;
+}
