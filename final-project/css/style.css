@@ -1,0 +1,63 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Futura", sans-serif;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; /* Set a minimum height of the viewport */
+    background: linear-gradient(to bottom, #83a2b3, #8C7DBB, #dfba9a); /* You can adjust the colors and direction as needed */
+}
+
+.page-header {
+    position: relative;
+    width: 350px; /* Set the width of the container */
+  }
+
+.microphone-image {
+    width: 90%;
+    height: auto;
+    display: block;
+    opacity: 50%;
+  }
+
+.left-rectangle, .right-rectangle {
+    position: absolute;
+    padding: 10px;
+    display: flex;
+    justify-content: center; /* Center the text horizontally */
+    align-items: center; /* Center the text vertically */
+    background-color: rgba(255, 255, 255, 0.3);
+    padding: 10px;
+    z-index: 1; /* Set the z-index to make sure it appears above the image */
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add drop shadow */
+  }
+
+.left-rectangle {
+    top: 100px;
+    left: -90px;
+    width: 300px;
+    height: 75px;
+    border-left: 90px solid rgb(255, 255, 255); /* Right border for the left rectangle */
+    outline: 10px solid rgb(255, 255, 255); /* Thick left stroke for the left rectangle */
+    outline-offset: -2px; /* Adjust the offset to align with the border */
+}
+
+.right-rectangle {
+    top: 130px;
+    left: 208px;
+    width: 200px;
+    height: 75px;
+    border: 10px solid rgb(255, 255, 255);
+}
+
+.page-title {
+    color: #ffffff;
+    font-size: 40px;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Add drop shadow to the text */
+  }
