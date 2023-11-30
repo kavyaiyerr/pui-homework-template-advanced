@@ -56,8 +56,30 @@ function likedMod(song) {
     songInfo(song);
     updateSongs();
 
+    let remove = song.element.querySelector(".remove");
+    //remove the roll when clicked
+    remove.addEventListener("click", function(){
+        removeSong(song);
+    });
 
 }
+
+//removing a song
+function removeSong(song) {
+    let index = 0;
+    for (let elem of songs) {
+        if (elem == song) {
+            break
+        }
+        else {
+            index +=1;
+        }
+    }
+    
+    song.element.remove(song);
+    songs.splice(index, 1);
+    updateSongs();
+  }
 
 //call function on cart items
 document.addEventListener("DOMContentLoaded", function() {

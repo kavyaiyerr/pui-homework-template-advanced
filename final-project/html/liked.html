@@ -7,6 +7,16 @@
         <link rel= "stylesheet" href = "../css/style.css">
         <meta name= "viewport" content= "width=device-width, initial-scale=1">
         <script src = "../js/likedSongs.js" defer></script>
+        <script src="https://apis.google.com/js/api.js"></script>
+        <script>
+          function onYouTubeApiLoad() {
+            gapi.client.init({
+              apiKey: 'AIzaSyCGr4-POpx4JwHQp1u62GkZxgVDL8vplNA',
+              discoveryDocs: ['https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest'],
+            });
+          }
+        </script>
+        <script src="https://apis.google.com/js/client.js?onload=onYouTubeApiLoad"></script>
     </head>
 
     <body>
@@ -48,6 +58,7 @@
                                 <source class = "link" type="audio/mp3">
                                 Your browser does not support the audio tag.
                           </audio>
+                          <a class = "remove"> Remove </a>
                         </div>
                       </div>
             

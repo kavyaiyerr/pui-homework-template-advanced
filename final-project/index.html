@@ -6,6 +6,17 @@
     <meta charset= "UTF-8">
     <link rel= "stylesheet" href = "css/style.css">
     <meta name= "viewport" content= "width=device-width, initial-scale=1">
+    <!-- Include YouTube API script and initialize it -->
+    <!-- <script src="https://apis.google.com/js/api.js"></script> -->
+    <!-- <script>
+      function onYouTubeApiLoad() {
+        gapi.client.init({
+          apiKey: 'AIzaSyCGr4-POpx4JwHQp1u62GkZxgVDL8vplNA',
+          discoveryDocs: ['https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest'],
+        });
+      }
+    </script>
+    <script src="https://apis.google.com/js/client.js?onload=onYouTubeApiLoad"></script> -->
   </head>
 
   <body>
@@ -20,13 +31,13 @@
     </div>
 
     <div class = "user-options">
-      <form action="html/results.html" method="GET">
+      <form onsubmit= "onSubmit()">
         <p class = "directions"> Fill out the fields below to find covers of your favorite songs! </p>
-        <input type="text" placeholder="Song Title" required>
-        <input type="text" placeholder="Artist" required>
-        <button class = "submit-button" type="submit">Generate</button> 
+        <input id = "song-title" type="text" placeholder="Song Title" required>
+        <input id = "song-artist" type="text" placeholder="Artist" required>
+        <button class = "submit-button" type="submit" >Generate</button> 
       </form>
     </div>
-
+    <script src = "js/script.js"></script>
   </body>
 </html>
