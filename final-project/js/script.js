@@ -1,70 +1,69 @@
+//function to display visibility of sections
+function hideSearch() {
+    event.preventDefault()
+    let section1 = document.querySelector('.search'); // Add a dot for the class selector
+    let section2 = document.querySelector('.results'); // Add a dot for the class selector
+    section1.style.display = "none";
+    section2.style.display = "block";
+}
+
+function hideResults() {
+    let section1 = document.querySelector('.search'); // Add a dot for the class selector
+    let section2 = document.querySelector('.results'); // Add a dot for the class selector
+    section1.style.display = "block";
+    section2.style.display = "none";
+}
+
 //CODE TO DISPLAY SEARCH RESULTS
 
+
 // function to grab form field answers from home page
-function onSubmit() {
-    console.log("form-submitted");
-    const songTitle = document.getElementById('song-title').value;
-    const artist = document.getElementById('song-artist').value;
 
-  
-    //search for YouTube covers based on the title/artist
-    // searchCovers(songTitle, artist);
-  
+//functions to make API call
+
+function authenticate() {
+    return gapi.auth2.getAuthInstance()
+        .signIn({scope: "https://www.googleapis.com/auth/youtube.force-ssl"})
+        .then(function() { console.log("Sign-in successful"); },
+              function(err) { console.error("Error signing in", err); });
   }
-  
-  // function to search YouTube covers based on the provided song title and artist
-  function searchCovers(songTitle, artist) {
-    console.log('here');
-    // gapi.client.youtube.search.list({
-    //   part: 'snippet',
-    //   q: `${songTitle} ${artist} cover`,
-    //   type: 'video',
-    // })
-    // .then(response => {
-    //   // Handle the response and update the results page with the obtained covers
-    //   const videos = response.result.items;
-    //   updateResultsPage(videos);
-    //   console.log(response);
-    // })
-
-    //error handling?
+function loadClient() {
+    gapi.client.setApiKey("YOUR_API_KEY");
+    return gapi.client.load("https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest")
+        .then(function() { console.log("GAPI client loaded for API"); },
+              function(err) { console.error("Error loading GAPI client for API", err); });
   }
-  
-  // function to update the results page with cover information
-  function updateResultsPage(videos) {
-    //select all four cards
-    const cards = document.querySelectorAll('.card');
 
-    //loop through cards and update content
-    for (let i = 0; i < cards.length; i++) {
-        let currVid = videos[i];
+function execute() {
+    //authorize & load client
+    authenticate().then(loadClient);
 
-        //grab all the elements of the card
-        let image = cards[i].querySelector('.image');
-        let title = cards[i].querySelector('.title');
-        let artist = cards[i].querySelector('.artist');
-        let audio = cards[i].querySelector('audio');
+    //grab form field entries
+    let songTitle = document.getElementById('song-title').value;
+    let artist = document.getElementById('song-artist').value;
 
-        //update card content
-        image.src = currVid.snippet.thumbnails.default.url;
-        title.textContent = currVid.snippet.title;
-        artist.textContent = currVid.snippet.channelTitle;
-        audio.src = `https://www.youtube.com/watch?v=${video.id.videoId}`;
-        
-      } 
+    //execute API call
+    return gapi.client.youtube.search.list({
+      "part": [
+        "snippet"
+      ],
+      "maxResults": 48,
+      "q": songTitle + artist + "cover",
+      "type": [
+        "video"
+      ]
+    })
+        .then(function(response) {
+                // Handle the results here (response.result has the parsed body).
+                console.log("Response", response);
+              },
+              function(err) { console.error("Execute error", err); });
   }
-  
-  
-  // function to regenerate recommendations on the results page
-  function regenerateSong() {
-    const songTitle = document.getElementById('song-title').value;
-    const artist = document.getElementById('song-artist').value;
-  
-    //search for YouTube covers based on the title/artist (how do i get the next four from the list?)
-    //global counter for #times regenerate is pressed?
-    //remove from top and add it to bottom of list once the four cards have loaded?
-    searchCovers(songTitle, artist);
-  }
+  gapi.load("client:auth2", function() {
+    gapi.auth2.init({client_id: "YOUR_CLIENT_ID"});
+  });
+
+//function to populate result cards
 
 
 //CODE FOR LIKING SONGS

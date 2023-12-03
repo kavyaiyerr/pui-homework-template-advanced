@@ -6,38 +6,114 @@
     <meta charset= "UTF-8">
     <link rel= "stylesheet" href = "css/style.css">
     <meta name= "viewport" content= "width=device-width, initial-scale=1">
-    <!-- Include YouTube API script and initialize it -->
-    <!-- <script src="https://apis.google.com/js/api.js"></script> -->
-    <!-- <script>
-      function onYouTubeApiLoad() {
-        gapi.client.init({
-          apiKey: 'AIzaSyCGr4-POpx4JwHQp1u62GkZxgVDL8vplNA',
-          discoveryDocs: ['https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest'],
-        });
-      }
-    </script>
-    <script src="https://apis.google.com/js/client.js?onload=onYouTubeApiLoad"></script> -->
+    <script src="https://apis.google.com/js/api.js"></script>
+    <script src = "js/script.js" defer> </script>
   </head>
 
-  <body>
-    <div class= "page-header">
-      <img src= "assets/microphone.png" alt="Decorative microphone image" class="microphone-image">
-      <div class= "left-rectangle">
-        <p class= "page-title">melody</p>
+  <body class = "page">
+    <section class = "search">
+      <div class= "page-header">
+        <img src= "assets/microphone.png" alt="Decorative microphone image" class="microphone-image">
+        <div class= "left-rectangle">
+          <p class= "page-title">melody</p>
+        </div>
+        <div class= "right-rectangle">
+          <p class= "page-title">match</p>
+        </div>
       </div>
-      <div class= "right-rectangle">
-        <p class= "page-title">match</p>
+  
+      <div class = "user-options">
+        <form onsubmit = "hideSearch()">
+          <p class = "directions"> Fill out the fields below to find covers of your favorite songs! </p>
+          <input id = "song-title" type="text" placeholder="Song Title" required>
+          <input id = "song-artist" type="text" placeholder="Artist" required>
+          <button class = "submit-button" type="submit">Generate</button> 
+        </form>
       </div>
-    </div>
+    </section>
 
-    <div class = "user-options">
-      <form onsubmit= "onSubmit()">
-        <p class = "directions"> Fill out the fields below to find covers of your favorite songs! </p>
-        <input id = "song-title" type="text" placeholder="Song Title" required>
-        <input id = "song-artist" type="text" placeholder="Artist" required>
-        <button class = "submit-button" type="submit" >Generate</button> 
-      </form>
-    </div>
-    <script src = "js/script.js"></script>
+    <section class = "results container">
+      <h1>Recommendations</h1>
+      <div class = "row">
+        <div class="card">
+          <img class = "image" src="../assets/taylorswift.png" alt="Song 1">
+          <div class="card-content">
+            <div class = "info-and-button">
+              <div class = "song-info">
+                <h3 class = "title">Song Title 1</h3>
+                <p class = "artist">Artist 1</p>
+              </div>
+                <button class="like-btn" onclick="likeSong(this)"> Like </button>
+            </div>
+            <audio controls>
+                  <source class = "link" src="song1_preview.mp3" type="audio/mp3">
+                  Your browser does not support the audio tag.
+            </audio>
+          </div>
+        </div>
+      
+        <div class="card">
+          <img src="../assets/taylorswift.png" alt="Song 2">
+          <div class="card-content">
+            <div class = "info-and-button">
+              <div class = "song-info">
+                <h3>Song Title 2</h3>
+                <p>Artist 2</p>
+              </div>
+                <button class="like-btn" onclick="likeSong(this)"> Like </button>
+            </div>
+            <audio controls>
+                  <source src="song2_preview.mp3" type="audio/mp3">
+                  Your browser does not support the audio tag.
+            </audio>
+          </div>
+        </div>
+  
+      </div>
+  
+      <div class = "row">
+  
+        <div class="card">
+          <img src="../assets/taylorswift.png" alt="Song 3">
+          <div class="card-content">
+            <div class = "info-and-button">
+              <div class = "song-info">
+                <h3>Song Title 3</h3>
+                <p>Artist 3</p>
+              </div>
+                <button class="like-btn" onclick="likeSong(this)"> Like </button>
+            </div>
+            <audio controls>
+                  <source src="song3_preview.mp3" type="audio/mp3">
+                  Your browser does not support the audio tag.
+            </audio>
+          </div>
+        </div>
+      
+        <div class="card">
+          <img src="../assets/taylorswift.png" alt="Song 4">
+          <div class="card-content">
+            <div class = "info-and-button">
+              <div class = "song-info">
+                <h3>Song Title 4</h3>
+                <p>Artist 4</p>
+              </div>
+                <button class="like-btn" onclick="likeSong(this)"> Like </button>
+            </div>
+            <audio controls>
+                  <source src="song4_preview.mp3" type="audio/mp3">
+                  Your browser does not support the audio tag.
+            </audio>
+          </div>
+        </div>
+        
+      </div>
+  
+      <div class = "results-buttons">
+        <button class="regen-btn" onclick="regenerateSong()"> Regenerate </button>
+        <button class="restart-btn" onclick="hideResults()"> Restart </button>
+      </div>
+    </section>
+    
   </body>
 </html>

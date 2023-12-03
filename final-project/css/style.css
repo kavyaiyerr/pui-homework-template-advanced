@@ -18,11 +18,29 @@ body {
     background-color: #666666;
 }
 
+
 input {
     width: 250px;
     height: 60px;
     border: 5px solid rgb(255, 255, 255);
 
+}
+
+.page {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center children horizontally */
+    justify-content: center; /* Center children vertically */
+    min-height: 100vh;
+}
+
+.search, .results {
+    width: 100%;
+    padding: 2rem;
+}
+
+.results {
+    display: none;
 }
 
 .directions {
@@ -33,29 +51,30 @@ input {
 
 .left-rectangle, .right-rectangle {
     position: absolute;
-    padding: 10px;
+    padding: 0.625rem;
     display: flex;
     justify-content: center; /* Center the text horizontally */
     align-items: center; /* Center the text vertically */
     background-color: rgba(255, 255, 255, 0.3);
-    padding: 10px;
+    padding: 0.625rem;
     z-index: 1; /* Set the z-index to make sure it appears above the image */
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add drop shadow */
   }
 
 .left-rectangle {
-    top: 150px;
-    left: -215px;
-    width: 500px;
-    height: 90px;
-    border-left: 90px solid rgb(255, 255, 255); /* Right border for the left rectangle */
-    outline: 10px solid rgb(255, 255, 255); /* Thick left stroke for the left rectangle */
-    outline-offset: -2px; /* Adjust the offset to align with the border */
- }
+    top: 12.5rem;
+    left: 25rem;
+    width: 31.25rem;
+    height: 5.625rem;
+    border-left: 5.625rem solid rgb(255, 255, 255); /* Right border for the left rectangle */
+    outline: 0.625rem solid rgb(255, 255, 255); /* Thick left stroke for the left rectangle */
+    outline-offset: -0.125; /* Adjust the offset to align with the border */
+ } 
+
 
 .microphone-image {
-    width: 120%;
+    width: 20%;
     height: auto;
     display: block;
     opacity: 50%;
@@ -69,17 +88,17 @@ input {
 }
 
 .page-header {
+    padding: 4rem;
     position: relative;
-    width: 350px; /* Set the width of the container */
-    margin-top: 0px;
+    width: 100%; /* Set the width of the container */
   }
 
 .right-rectangle {
-    top: 200px;
-    left: 250px;
-    width: 350px;
-    height: 90px;
-    border: 10px solid rgb(255, 255, 255);
+    top: 15.625rem;
+    left: 53rem;
+    width: 21.875rem;
+    height: 5.625rem;
+    border: 0.625rem solid rgb(255, 255, 255);
 }
 
 .row {
@@ -89,7 +108,7 @@ input {
 }
 
 .user-options {
-    margin: 100px;
+    margin: 6.25rem;
 }
 
 
