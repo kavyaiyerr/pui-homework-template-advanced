@@ -6,33 +6,27 @@
         <meta charset= "UTF-8">
         <link rel= "stylesheet" href = "../css/style.css">
         <meta name= "viewport" content= "width=device-width, initial-scale=1">
-        <script src = "../js/likedSongs.js" defer></script>
         <script src="https://apis.google.com/js/api.js"></script>
-        <script>
-          function onYouTubeApiLoad() {
-            gapi.client.init({
-              apiKey: 'AIzaSyCGr4-POpx4JwHQp1u62GkZxgVDL8vplNA',
-              discoveryDocs: ['https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest'],
-            });
-          }
-        </script>
-        <script src="https://apis.google.com/js/client.js?onload=onYouTubeApiLoad"></script>
+        <script src = "../js/likedSongs.js" defer></script>
     </head>
 
     <body>
-        <!-- logo/navigation/header -->
-        <header>    
-            <div id = "header-text">
-                <nav>
-                <div id = "link1"> 
-                    <a class = "page" id = "recommendations" href = "results.html"> recommendations </a>
-                </div>
-                <div id = "link2">
-                    <a class = "page" id = "liked" href = "#"> liked covers </a>
-                </div>
-                </nav>
-            </div>
-        </header>
+          <!-- logo/navigation/header -->
+    <header>
+      <div id = "header-text">
+        <nav>
+          <div id = "link1"> 
+            <a id = "home" href = "index.html/.search" onclick="hideResults()"> Search Covers </a>
+          </div>
+          <div id = "link2"> 
+            <a id = "results" href = "index.html/.results" onclick="hideSearch()"> Results </a>
+          </div>
+          <div id = "link3">
+            <a id = "liked" href = "html/liked.html"> Liked Songs </a>
+          </div>
+        </nav>
+      </div>
+    </header>
 
         <!-- page body -->
         <div class = "entire_page">

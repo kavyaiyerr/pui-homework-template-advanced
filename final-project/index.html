@@ -6,35 +6,69 @@
     <meta charset= "UTF-8">
     <link rel= "stylesheet" href = "css/style.css">
     <meta name= "viewport" content= "width=device-width, initial-scale=1">
-    <script src="https://apis.google.com/js/api.js"></script>
-    <script src = "js/script.js" defer> </script>
+    <!-- <script src="https://apis.google.com/js/api.js"></script> -->
+    <script src = "server.js" defer> </script>
   </head>
 
   <body class = "page">
+    <!-- logo/navigation/header -->
+    <header>
+      <div id = "header-text">
+        <nav>
+          <div id = "link1"> 
+            <a id = "home" href = ".search" onclick="hideResults()"> Search Covers </a>
+          </div>
+          <div id = "link2"> 
+            <a id = "results" href = ".results" onclick="hideSearch()"> Results </a>
+          </div>
+          <div id = "link3">
+            <a id = "liked" href = "html/liked.html"> Liked Songs </a>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- search page with form for user to enter -->
     <section class = "search">
-      <div class= "page-header">
-        <img src= "assets/microphone.png" alt="Decorative microphone image" class="microphone-image">
-        <div class= "left-rectangle">
-          <p class= "page-title">melody</p>
+
+        <div id = "col1">
+          <img src= "assets/microphone.png" alt="Decorative microphone image" class="microphone-image">
         </div>
-        <div class= "right-rectangle">
-          <p class= "page-title">match</p>
+
+        <div id = "col2">
+          <!-- melody match header -->
+          <div id = "project-name">
+            <div class= "left-rectangle">
+              <p class= "page-title">melody</p>
+            </div>
+            <div class= "right-rectangle">
+              <p class= "page-title">match</p>
+            </div>
+          </div>
+
+          <!-- form -->
+          <div class = "user-options">
+
+              <p class = "directions"> Fill out the fields below to find covers of your favorite songs! </p>
+              <input id = "song-title" type="text" placeholder="Song Title" required>
+              <input id = "song-artist" type="text" placeholder="Artist" required>
+              <button class = "submit-button" onclick = "Generate()">Generate</button> 
+
+          </div>
+
         </div>
-      </div>
-  
-      <div class = "user-options">
-        <form onsubmit = "hideSearch()">
-          <p class = "directions"> Fill out the fields below to find covers of your favorite songs! </p>
-          <input id = "song-title" type="text" placeholder="Song Title" required>
-          <input id = "song-artist" type="text" placeholder="Artist" required>
-          <button class = "submit-button" type="submit">Generate</button> 
-        </form>
-      </div>
+
     </section>
 
+
+    <!-- results page with four cards to display four results -->
     <section class = "results container">
       <h1>Recommendations</h1>
+
+      <!-- row 1 -->
       <div class = "row">
+
+        <!-- card 1 -->
         <div class="card">
           <img class = "image" src="../assets/taylorswift.png" alt="Song 1">
           <div class="card-content">
@@ -52,6 +86,7 @@
           </div>
         </div>
       
+        <!-- card 2 -->
         <div class="card">
           <img src="../assets/taylorswift.png" alt="Song 2">
           <div class="card-content">
@@ -71,8 +106,10 @@
   
       </div>
   
+      <!-- row 2 -->
       <div class = "row">
-  
+       
+        <!-- card 3 -->
         <div class="card">
           <img src="../assets/taylorswift.png" alt="Song 3">
           <div class="card-content">
@@ -90,6 +127,7 @@
           </div>
         </div>
       
+        <!-- card 4 -->
         <div class="card">
           <img src="../assets/taylorswift.png" alt="Song 4">
           <div class="card-content">
@@ -114,6 +152,7 @@
         <button class="restart-btn" onclick="hideResults()"> Restart </button>
       </div>
     </section>
-    
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+ <script src="https://apis.google.com/js/client.js?onload=googleApiClientReady">   </script>
   </body>
 </html>

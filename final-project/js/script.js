@@ -19,43 +19,48 @@ function hideResults() {
 //functions to make API call
 
 //function to load the YouTube API client with the API key
-function loadClient() {
+function authenticate() {
+    console.log("ran");
+    return gapi.auth2.getAuthInstance()
+        .signIn({scope: "https://www.googleapis.com/auth/youtube.force-ssl"})
+        .then(function() { console.log("Sign-in successful"); },
+              function(err) { console.error("Error signing in", err); });
+  }
+
+  function loadClient() {
+    console.log("ran");
     gapi.client.setApiKey("AIzaSyCGr4-POpx4JwHQp1u62GkZxgVDL8vplNA");
     return gapi.client.load("https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest")
         .then(function() { console.log("GAPI client loaded for API"); },
               function(err) { console.error("Error loading GAPI client for API", err); });
-}
+  }
 
-//function to execute the YouTube API search
-function execute() {
-    //load the YouTube API client with the API key
-    return loadClient()
-        .then(function() {
-            //grab form field entries
-            let songTitle = document.getElementById('song-title').value;
-            let artist = document.getElementById('song-artist').value;
-
-            //execute the API call
-            return gapi.client.youtube.search.list({
-                "part": ["snippet"],
+  // Make sure the client is loaded and sign-in is complete before calling this method.
+  function execute(songTitle, artist) {
+    console.log(gapi.client.youtube);
+    return gapi.client.youtube.search.list({
+      "part": ["snippet"],
                 "maxResults": 48,
                 "q": songTitle + artist + "cover",
                 "type": ["video"]
-            });
-        })
+    })
         .then(function(response) {
-            //handle the results here (response.result has the parsed body).
-            console.log("Response", response);
-            return response;
-        })
-        .catch(function(err) {
-            console.error("Execute error", err);
-        });
-}
+                // Handle the results here (response.result has the parsed body).
+                console.log("Response", response);
+              },
+              function(err) { console.error("Execute error", err); });
+  }
+  gapi.load("client:auth2", function() {
+    gapi.auth2.init({client_id: "1041864465316-pst5c0jk5dfs71gpb0720pkspeavuj8h.apps.googleusercontent.com"});
+  });
+
 
 //function to populate result cards
 function generateCards() {
-    execute()
+    //grab form field entries
+    let songTitle = document.getElementById('song-title').value;
+    let artist = document.getElementById('song-artist').value;
+    execute(songTitle, artist)
         .then(function(response) {
             let searchResults = response.result.items;
 
