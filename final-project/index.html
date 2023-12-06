@@ -6,7 +6,7 @@
     <meta charset= "UTF-8">
     <link rel= "stylesheet" href = "css/style.css">
     <meta name= "viewport" content= "width=device-width, initial-scale=1">
-    <script src = "server.js" defer> </script>
+    <script src = "js/server.js" defer> </script>
   </head>
 
   <body class = "page">
@@ -15,10 +15,10 @@
       <div id = "header-text">
         <nav>
           <div id = "link1"> 
-            <a id = "home" href = ".search" onclick="hideResults()"> Search Covers </a>
+            <a href = "#search" onclick="hideResults()"> Search Covers </a>
           </div>
           <div id = "link2"> 
-            <a id = "results" href = ".results" onclick="hideSearch()"> Results </a>
+            <a href = "#results" onclick="showResults()"> Results </a>
           </div>
           <div id = "link3">
             <a id = "liked" href = "html/liked.html"> Liked Songs </a>
@@ -28,7 +28,7 @@
     </header>
 
     <!-- search page with form for user to enter -->
-    <section class = "search">
+    <section id = "search">
 
         <div id = "col1">
           <img src= "assets/microphone.png" alt="Decorative microphone image" class="microphone-image">
@@ -61,90 +61,98 @@
 
 
     <!-- results page with four cards to display four results -->
-    <section class = "results container">
+    <section id = "results" class = "container">
       <h1>Recommendations</h1>
-
-      <!-- row 1 -->
-      <div class = "row">
-
-        <!-- card 1 -->
-        <div class="card">
-          <img class = "image" src="../assets/taylorswift.png" alt="Song 1">
-          <div class="card-content">
-            <div class = "info-and-button">
-              <div class = "song-info">
-                <h3 class = "title">Song Title 1</h3>
-                <p class = "artist">Artist 1</p>
-              </div>
-                <button class="like-btn" onclick="likeSong(this)"> Like </button>
-            </div>
-            <audio controls>
-                  <source class = "link" src="song1_preview.mp3" type="audio/mp3">
-                  Your browser does not support the audio tag.
-            </audio>
-          </div>
-        </div>
-      
-        <!-- card 2 -->
-        <div class="card">
-          <img class = "image" src="../assets/taylorswift.png" alt="Song 2">
-          <div class="card-content">
-            <div class = "info-and-button">
-              <div class = "song-info">
-                <h3 class = "title" >Song Title 2</h3>
-                <p class = "artist" >Artist 2</p>
-              </div>
-                <button class="like-btn" onclick="likeSong(this)"> Like </button>
-            </div>
-            <audio controls>
-                  <source src="song2_preview.mp3" type="audio/mp3">
-                  Your browser does not support the audio tag.
-            </audio>
-          </div>
-        </div>
-  
+      <div id = "no-results">
+        <p> No results </p>
       </div>
-  
-      <!-- row 2 -->
-      <div class = "row">
-       
-        <!-- card 3 -->
-        <div class="card">
-          <img class = "image" src="../assets/taylorswift.png" alt="Song 3">
-          <div class="card-content">
-            <div class = "info-and-button">
-              <div class = "song-info">
-                <h3 class = "title" >Song Title 3</h3>
-                <p class = "artist" >Artist 3</p>
-              </div>
-                <button class="like-btn" onclick="likeSong(this)"> Like </button>
-            </div>
-            <audio controls>
-                  <source src="song3_preview.mp3" type="audio/mp3">
-                  Your browser does not support the audio tag.
-            </audio>
-          </div>
-        </div>
       
-        <!-- card 4 -->
-        <div class="card">
-          <img class = "image" src="../assets/taylorswift.png" alt="Song 4">
-          <div class="card-content">
-            <div class = "info-and-button">
-              <div class = "song-info">
-                <h3 class = "title" >Song Title 4</h3>
-                <p class = "artist" >Artist 4</p>
+      <!-- all cards -->
+      <div id = "allcards">
+
+        <!-- row 1 -->
+        <div class = "row">
+
+          <!-- card 1 -->
+          <div class="card" id = "first-card">
+            <img class = "image" src="assets/taylorswift.png" alt="Song 1">
+            <div class="card-content">
+              <div class = "info-and-button">
+                <div class = "song-info">
+                  <h3 class = "title">Song Title 1</h3>
+                  <p class = "artist">Artist 1</p>
+                </div>
+                  <button class="like-btn" onclick="likeSong(this)"> Like </button>
               </div>
-                <button class="like-btn" onclick="likeSong(this)"> Like </button>
+              <audio controls>
+                    <source class = "link" src="song1_preview.mp3" type="audio/mp3">
+                    Your browser does not support the audio tag.
+              </audio>
             </div>
-            <audio controls>
-                  <source src="song4_preview.mp3" type="audio/mp3">
-                  Your browser does not support the audio tag.
-            </audio>
           </div>
-        </div>
         
+          <!-- card 2 -->
+          <div class="card">
+            <img class = "image" src="assets/taylorswift.png" alt="Song 2">
+            <div class="card-content">
+              <div class = "info-and-button">
+                <div class = "song-info">
+                  <h3 class = "title" >Song Title 2</h3>
+                  <p class = "artist" >Artist 2</p>
+                </div>
+                  <button class="like-btn" onclick="likeSong(this)"> Like </button>
+              </div>
+              <audio controls>
+                    <source src="song2_preview.mp3" type="audio/mp3">
+                    Your browser does not support the audio tag.
+              </audio>
+            </div>
+          </div>
+    
+        </div>
+    
+        <!-- row 2 -->
+        <div class = "row">
+         
+          <!-- card 3 -->
+          <div class="card">
+            <img class = "image" src="assets/taylorswift.png" alt="Song 3">
+            <div class="card-content">
+              <div class = "info-and-button">
+                <div class = "song-info">
+                  <h3 class = "title" >Song Title 3</h3>
+                  <p class = "artist" >Artist 3</p>
+                </div>
+                  <button class="like-btn" onclick="likeSong(this)"> Like </button>
+              </div>
+              <audio controls>
+                    <source src="song3_preview.mp3" type="audio/mp3">
+                    Your browser does not support the audio tag.
+              </audio>
+            </div>
+          </div>
+        
+          <!-- card 4 -->
+          <div class="card">
+            <img class = "image" src="assets/taylorswift.png" alt="Song 4">
+            <div class="card-content">
+              <div class = "info-and-button">
+                <div class = "song-info">
+                  <h3 class = "title" >Song Title 4</h3>
+                  <p class = "artist" >Artist 4</p>
+                </div>
+                  <button class="like-btn" onclick="likeSong(this)"> Like </button>
+              </div>
+              <audio controls>
+                    <source src="song4_preview.mp3" type="audio/mp3">
+                    Your browser does not support the audio tag.
+              </audio>
+            </div>
+          </div>
+        </div>
+
       </div>
+
   
       <div class = "results-buttons">
         <button class="regen-btn" onclick="regenerateSong()"> Regenerate </button>

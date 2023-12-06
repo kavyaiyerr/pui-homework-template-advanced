@@ -1,8 +1,9 @@
 class Song {
-    constructor(songTitle, songArtist, songImage, songLink) {
+    constructor(songTitle, songArtist, songImage, imageAlt, songLink) {
         this.title = songTitle;
         this.artist = songArtist;
         this.image = songImage;
+        this.imageAlt = imageAlt;
         this.link = songLink;
     }
 }
@@ -13,7 +14,8 @@ let songs = [];
 //add the appropriate information
 function songInfo(song) {
     let songImage = song.element.querySelector(".image");
-    songImage.src = "";
+    songImage.src = song.image;
+    songImage.alt = song.imageAlt;
 
     let songTitle = song.element.querySelector(".title");
     songTitle.innerHTML = song.title;
