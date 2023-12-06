@@ -12,53 +12,57 @@
 
     <body>
     <!-- logo/navigation/header -->
-    <header>
-      <div id = "header-text">
-        <nav>
-          <div id = "link1"> 
-            <a href = "../index.html#search" onclick="hideResults()"> Search Covers </a>
-          </div>
-          <div id = "link2"> 
-            <a href = "../index.html#results" onclick="showResults()"> Results </a>
-          </div>
-          <div id = "link3">
-            <a id = "liked" href = "liked.html"> Liked Songs </a>
-          </div>
-        </nav>
-      </div>
-    </header>
-
-        <!-- page body -->
-        <div class = "entire_page">
-            <div class = "song-display">
-                <template class = "songs">
-                    <div class="card, liked-item">
-                        <!-- song image -->
-                        <div class = "image_and_remove">
-                            <div>
-                                <img class = "image" alt = "song album cover"/>
-                            </div>
-                        </div>
-
-                        <div class="card-content">
-                          <div class = "info-and-button">
-                            <div class = "song-info">
-                              <h3 class = "title"> </h3>
-                              <p class = "artist"> </p>
-                            </div>
-                          </div>
-
-                          <audio controls>
-                                <source class = "link" type="audio/mp3">
-                                Your browser does not support the audio tag.
-                          </audio>
-                          <a class = "remove"> Remove </a>
-                        </div>
-                      </div>
-            
-                </template>
+    <div class = "parent"> 
+      <header>
+        <div id = "header-text">
+          <nav>
+            <div id = "link1"> 
+              <a href = "../index.html#search" onclick="hideResults()"> Search Covers </a>
             </div>
+            <div id = "link2"> 
+              <a href = "../index.html#results" onclick="showResults()"> Results </a>
+            </div>
+            <div id = "link3">
+              <a id = "liked" href = "liked.html"> Liked Songs </a>
+            </div>
+          </nav>
         </div>
+      </header>
+  
+          <!-- page body -->
+          <div class = "entire_page">
+              <div class = "song-display">
+                  <template class = "songs">
+                      <div class="card, liked-item">
+                          <!-- song image -->
+                          <div class = "image_and_remove">
+                              <div>
+                                  <img class = "image" alt = "song album cover"/>
+                              </div>
+                          </div>
+  
+                          <div class="card-content">
+                            <div class = "info-and-button">
+                              <div class = "song-info">
+                                <h3 class = "title"> </h3>
+                                <p class = "artist"> </p>
+                              </div>
+                            </div>
+  
+                            <audio controls>
+                                  <source class = "link" type="audio/mp3">
+                                  Your browser does not support the audio tag.
+                            </audio>
+                            <a class = "remove"> Remove </a>
+                          </div>
+                        </div>
+              
+                  </template>
+              </div>
+          </div>
+
+
+    </div>
     
 
     </body>

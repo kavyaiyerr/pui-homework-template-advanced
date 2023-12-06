@@ -8,8 +8,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 100vh; /* Set a minimum height of the viewport */
-    background: linear-gradient(to bottom, #83a2b3, #8C7DBB, #dfba9a); /* You can adjust the colors and direction as needed */
+    background: linear-gradient(to bottom, #83a2b3, #8C7DBB, #dfba9a); 
+    min-height: 100vh;
 }
 
 .submit-button, .like-btn {
@@ -29,9 +29,19 @@ input {
 .page {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Center children horizontally */
-    justify-content: center; /* Center children vertically */
-    min-height: 100vh;
+    align-items: center; 
+    justify-content: center; 
+}
+
+#col1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#project-name {
+    display: flex;
+    margin: 6.25em;
 }
 
 #search, #results {
@@ -43,6 +53,10 @@ input {
     display: none;
 }
 
+#search {
+    display: flex;
+}
+
 .directions {
     color: #ffffff;
     font-size: 24px;
@@ -50,21 +64,18 @@ input {
 }
 
 .left-rectangle, .right-rectangle {
-    position: absolute;
+    position: relative;
     padding: 0.625rem;
     display: flex;
     justify-content: center; /* Center the text horizontally */
     align-items: center; /* Center the text vertically */
     background-color: rgba(255, 255, 255, 0.3);
-    padding: 0.625rem;
     z-index: 1; /* Set the z-index to make sure it appears above the image */
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add drop shadow */
   }
 
 .left-rectangle {
-    top: 12.5rem;
-    left: 25rem;
     width: 31.25rem;
     height: 5.625rem;
     border-left: 5.625rem solid rgb(255, 255, 255); /* Right border for the left rectangle */
@@ -74,7 +85,7 @@ input {
 
 
 .microphone-image {
-    width: 20%;
+    width: 50%;
     height: auto;
     display: block;
     opacity: 50%;
@@ -101,37 +112,33 @@ h1 {color: #ffffff;
 nav {
     display: flex;
     justify-content: space-around;
+    position: relative; 
 }
 
-#header-text {
-    position: relative;
-    padding: 20px;
+.parent {
+    display: flex;
+    flex-direction: column;
 }
 
 nav a {
     text-decoration: none;
     color: #ffffff;
     font-size: 20px;
-    margin: 0 15px; /* Adjust the margin as needed to create space between the links */
+    margin: 0px; /* Adjust the margin as needed to create space between the links */
+    padding: 10px;
 }
 
 hr {
-    position: absolute;
+    position: relative;
     top: 0;
     left: 0;
     width: 100%; /* Set the line to span the entire width */
     border: 1px solid #ffffff; /* Set the color of the line */
+    margin-bottom: 8rem;
 }
 
-.page-header {
-    padding: 4rem;
-    position: relative;
-    width: 100%; /* Set the width of the container */
-  }
 
 .right-rectangle {
-    top: 15.625rem;
-    left: 53rem;
     width: 21.875rem;
     height: 5.625rem;
     border: 0.625rem solid rgb(255, 255, 255);
@@ -216,9 +223,36 @@ audio {
 .restart-btn {
     width: 150px;
     height: 40px;
-    background-color: #666666;
     color: #fff;
+    background-color: #333; /* Change the button color */
+    font-family: "Futura", sans-serif; /* Set the font family */
+    cursor: pointer;
     font-size: 16px;
     cursor: pointer;
     margin: 5px; /* Add margin between buttons if needed */
 }
+
+#search input {
+    width: 250px;
+    height: 60px;
+    border: 5px solid rgb(255, 255, 255);
+    font-family: "Futura", sans-serif; /* Set the font family */
+    color: #000; /* Set the font color */
+    margin: 0.5rem;
+  }
+
+  
+/*style the button */
+#search button {
+    width: 250px;
+    height: 60px;
+    background-color: #333; /* Change the button color */
+    color: #fff; /* Set the text color */
+    font-family: "Futura", sans-serif; /* Set the font family */
+    cursor: pointer;
+    }
+
+/*style the button */
+#search button:hover {
+    background-color: #45048c; /* Change the button color */
+    }

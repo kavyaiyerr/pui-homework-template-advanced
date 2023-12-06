@@ -76,11 +76,11 @@ function Generate() {
 function hideResults() {
     let section1 = document.querySelector('#search'); 
     let section2 = document.querySelector('#results'); 
-    section1.style.display = "block";
+    section1.style.display = "flex";
     section2.style.display = "none";
 }
 
-function showResults(data_length) {
+function showResults() {
     let section1 = document.querySelector('#search'); 
     let section2 = document.querySelector('#results'); 
     section1.style.display = "none";
@@ -116,6 +116,8 @@ class Song {
 //like button actions
 let likeButtons = document.querySelectorAll('.like-btn');
 
+console.log(likeButtons)
+
 // Add event listeners to all like buttons
 likeButtons.forEach(button => {
     button.addEventListener('click', likeSong);
@@ -138,9 +140,13 @@ function updateSongs() {
 
 function likeSong(element) {
     //get attributes
+    // console.log(element.target.closest('.card'));
+    // console.log(element.target.parentNode.parentNode.parentNode)
+    
     let card = element.target.closest('.card');
+    // let card_new = element.target.parentNode.parentNode.parentNode;
     let image = card.querySelector('.image').src;
-    let altText = cart.querySelector('.image').alt;
+    let altText = card.querySelector('.image').alt;
     let title = card.querySelector('.title').innerHTML;
     let artist = card.querySelector('.artist').innerHTML;
     let link = card.querySelector('.link').src;

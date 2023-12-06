@@ -11,53 +11,58 @@
 
   <body class = "page">
     <!-- logo/navigation/header -->
-    <header>
-      <div id = "header-text">
-        <nav>
-          <div id = "link1"> 
-            <a href = "#search" onclick="hideResults()"> Search Covers </a>
-          </div>
-          <div id = "link2"> 
-            <a href = "#results" onclick="showResults()"> Results </a>
-          </div>
-          <div id = "link3">
-            <a id = "liked" href = "html/liked.html"> Liked Songs </a>
-          </div>
-        </nav>
-      </div>
-    </header>
 
-    <!-- search page with form for user to enter -->
-    <section id = "search">
-
-        <div id = "col1">
-          <img src= "assets/microphone.png" alt="Decorative microphone image" class="microphone-image">
-        </div>
-
-        <div id = "col2">
-          <!-- melody match header -->
-          <div id = "project-name">
-            <div class= "left-rectangle">
-              <p class= "page-title">melody</p>
+    <div class = "parent">
+      <header>
+        <div id = "header-text">
+          <nav>
+            <div id = "link1"> 
+              <a href = "#search" onclick="hideResults()"> Search Covers </a>
             </div>
-            <div class= "right-rectangle">
-              <p class= "page-title">match</p>
+            <div id = "link2"> 
+              <a href = "#results" onclick="showResults()"> Results </a>
             </div>
-          </div>
-
-          <!-- form -->
-          <div class = "user-options">
-
-              <p class = "directions"> Fill out the fields below to find covers of your favorite songs! </p>
-              <input id = "song-title" type="text" placeholder="Song Title" required>
-              <input id = "song-artist" type="text" placeholder="Artist" required>
-              <button class = "submit-button" onclick = "Generate()">Generate</button> 
-
-          </div>
-
+            <div id = "link3">
+              <a id = "liked" href = "html/liked.html"> Liked Songs </a>
+            </div>
+          </nav>
         </div>
-
-    </section>
+  
+        <hr>
+      </header>
+  
+      <!-- search page with form for user to enter -->
+      <section id = "search">
+  
+          <div id = "col1">
+            <img src= "assets/microphone.png" alt="Decorative microphone image" class="microphone-image">
+          </div>
+  
+          <div id = "col2">
+            <!-- melody match header -->
+            <div id = "project-name">
+              <div class= "left-rectangle">
+                <p class= "page-title">melody</p>
+              </div>
+              <div class= "right-rectangle">
+                <p class= "page-title">match</p>
+              </div>
+            </div>
+  
+            <!-- form -->
+            <div class = "user-options">
+  
+                <p class = "directions"> Fill out the fields below to find covers of your favorite songs! </p>
+                <input id = "song-title" type="text" placeholder="Song Title" required>
+                <input id = "song-artist" type="text" placeholder="Artist" required>
+                <button type = "submit" class = "submit-button" onclick = "Generate()">Generate</button> 
+  
+            </div>
+  
+          </div>
+  
+      </section>
+    
 
 
     <!-- results page with four cards to display four results -->
@@ -66,7 +71,7 @@
       <div id = "no-results">
         <p> No results </p>
       </div>
-      
+
       <!-- all cards -->
       <div id = "allcards">
 
@@ -82,7 +87,7 @@
                   <h3 class = "title">Song Title 1</h3>
                   <p class = "artist">Artist 1</p>
                 </div>
-                  <button class="like-btn" onclick="likeSong(this)"> Like </button>
+                  <button class="like-btn"> Like </button>
               </div>
               <audio controls>
                     <source class = "link" src="song1_preview.mp3" type="audio/mp3">
@@ -100,7 +105,7 @@
                   <h3 class = "title" >Song Title 2</h3>
                   <p class = "artist" >Artist 2</p>
                 </div>
-                  <button class="like-btn" onclick="likeSong(this)"> Like </button>
+                  <button class="like-btn"> Like </button>
               </div>
               <audio controls>
                     <source src="song2_preview.mp3" type="audio/mp3">
@@ -123,7 +128,7 @@
                   <h3 class = "title" >Song Title 3</h3>
                   <p class = "artist" >Artist 3</p>
                 </div>
-                  <button class="like-btn" onclick="likeSong(this)"> Like </button>
+                  <button class="like-btn"> Like </button>
               </div>
               <audio controls>
                     <source src="song3_preview.mp3" type="audio/mp3">
@@ -141,7 +146,7 @@
                   <h3 class = "title" >Song Title 4</h3>
                   <p class = "artist" >Artist 4</p>
                 </div>
-                  <button class="like-btn" onclick="likeSong(this)"> Like </button>
+                  <button class="like-btn"> Like </button>
               </div>
               <audio controls>
                     <source src="song4_preview.mp3" type="audio/mp3">
@@ -159,6 +164,7 @@
         <button class="restart-btn" onclick="hideResults()"> Restart </button>
       </div>
     </section>
+  </div>
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <script src="https://apis.google.com/js/client.js?onload=googleApiClientReady">   </script>
   </body>
