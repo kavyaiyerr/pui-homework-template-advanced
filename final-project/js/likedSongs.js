@@ -1,3 +1,31 @@
+//functions to toggle the different sections on the home screen
+function hideResults() {
+    let section1 = document.querySelector('#search'); 
+    let section2 = document.querySelector('#results'); 
+    section1.style.display = "flex";
+    section2.style.display = "none";
+}
+
+function showResults() {
+    let section1 = document.querySelector('#search'); 
+    let section2 = document.querySelector('#results'); 
+    section1.style.display = "none";
+    //if form fields aren't filled display text
+    if (document.getElementById('song-title').value.length == 0) {
+        document.getElementById('no-results').style.display = "block";
+        document.getElementById('allcards').style.display = "none";
+    }
+    //display section otherwise
+    else {
+        document.getElementById('no-results').style.display = "none";
+        section2.style.display = "block";
+        if (document.getElementById('allcards').style.display = "none") {
+            document.getElementById('allcards').style.display = "block";
+        }
+
+    }
+}
+
 class Song {
     constructor(songTitle, songArtist, songImage, imageAlt, songLink) {
         this.title = songTitle;
@@ -51,10 +79,10 @@ function likedMod(song) {
     //access & manipulate DOM
     song.element = templateContent.querySelector(".liked-item");
   
-    let cartItems = document.querySelector(".song-display")
+    let songItems = document.querySelector(".song-display")
     
-    //add to cart
-    cartItems.append(song.element);
+    //add to list
+    songItems.append(song.element);
     songInfo(song);
     updateSongs();
 
@@ -83,7 +111,7 @@ function removeSong(song) {
     updateSongs();
   }
 
-//call function on cart items
+//call function on songs
 document.addEventListener("DOMContentLoaded", function() {
     for (let elem of songs) {
       likedMod(elem);

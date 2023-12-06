@@ -201,7 +201,9 @@ hr {
     margin: 10px auto;
     cursor: pointer;
     font-size: 20px;
-    color: #ccc;
+    font-family: "Futura", sans-serif; /* Set the font family */
+    color: #fff;
+    background-color: #333; /* Set the font color */
 }
 
 .liked {
