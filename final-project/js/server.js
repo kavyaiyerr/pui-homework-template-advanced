@@ -26,19 +26,28 @@ function fetchSongs() {
 
 }
 
-let searchResults; //make globally accessible for regenerate function
+let searchResults;
+let searchcounter = 0; //make globally accessible for regenerate function
 
 //function to populate cards
-function cardPopulate(cards, results) {
-    for (let i = 0; i < results.length && i < cards.length; i++) {
-
-        let result = results[i];
+function cardPopulate(cards, results, initialsearchnumber) {
+    for (let i = 0; i < cards.length; i++) {
+        let result = results[0];
+        if (i + initialsearchnumber > results.length - 1){
+            result = results[i + initialsearchnumber - results.length + 1];
+            console.log("redisplay");
+        }
+        else {
+            result = results[i + initialsearchnumber];
+            console.log("first display");
+        }
         let card = cards[i];
 
         //update thumbnail
         let thumbnailUrl = result.snippet.thumbnails.medium.url;
         card.querySelector('.image').src = thumbnailUrl;
-        console.log(card.querySelector('.image').src);
+        card.querySelector('.image').style.width = "480px";
+        card.querySelector('.image').style.width = "360px";
         card.querySelector('.image').alt = `Song ${i + 1}`;
 
 
@@ -53,14 +62,15 @@ function cardPopulate(cards, results) {
 
 
         //update audio source
-        //const audioSource = `https://www.youtube.com/watch?v=${result.id.videoId}`;
-        //card.querySelector('.link').src = audioSource;
+        const audioSource = `https://www.youtube.com/watch?v=${result.id.videoId}`;
+        card.querySelector('.ext-link').href = audioSource;
     }
 
 }
 
 function Generate() {    
     showResults();
+    searchcounter = 0;
     // Call fetchSongs and handle the resolved data
     fetchSongs().then(function(data) {
         searchResults = Array.from(data.items); //make a copy of array since will be reordering
@@ -72,13 +82,13 @@ function Generate() {
         else {
             //populate cards
             let allCards = document.querySelectorAll('.card');
-            cardPopulate(allCards, searchResults);
+            cardPopulate(allCards, searchResults, searchcounter);
 
         }
 
         //at this point first four items have been displayed, can move to end of array
-        let moved = searchResults.splice(0, 4);
-        searchResults.push(moved);
+        // let moved = searchResults.splice(0, 4);
+        // searchResults.push(moved);
 
     })
 
@@ -128,7 +138,7 @@ class Song {
 //like button actions
 let likeButtons = document.querySelectorAll('.like-btn');
 
-// Add event listeners to all like buttons
+// Add event listeners for liking song & changing button color to all like buttons
 likeButtons.forEach(button => {
     button.addEventListener('click', likeSong);
 });
@@ -149,17 +159,17 @@ function updateSongs() {
 }
 
 function likeSong(element) {
-    //get attributes
-    // console.log(element.target.closest('.card'));
-    // console.log(element.target.parentNode.parentNode.parentNode)
     
+    //get card information
     let card = element.target.closest('.card');
-    // let card_new = element.target.parentNode.parentNode.parentNode;
+
+    card.querySelector(".like-btn").classList.toggle('liked');
+
     let image = card.querySelector('.image').src;
     let altText = card.querySelector('.image').alt;
     let title = card.querySelector('.title').innerHTML;
     let artist = card.querySelector('.artist').innerHTML;
-    let link = card.querySelector('.link').src;
+    let link = card.querySelector('.ext-link').href;
 
     
     //create a new song instance
@@ -174,8 +184,18 @@ function likeSong(element) {
 }
 
 function regenerate() {
-    let moved = searchResults.splice(0, 4); 
-    searchResults.concat(moved);
+    searchcounter = searchcounter + 4;
+    // console.log("before changes" + searchResults)
+    // let moved = searchResults.splice(0, 4); 
+    // console.log("moved" + moved);
+    // console.log("searchResults 1" + searchResults);
+
+    // //add moved elements to end of og array
+    // for (let i = 0; i < moved.length; i++) {
+    //     searchResults.push(moved[i]);
+    // }
+
+    // console.log("searchResults 2" + searchResults);
     let allCards = document.querySelectorAll('.card');
-    cardPopulate(allCards, searchResults);
+    cardPopulate(allCards, searchResults, searchcounter);
 }

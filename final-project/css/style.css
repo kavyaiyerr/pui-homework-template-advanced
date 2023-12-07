@@ -11,7 +11,7 @@ body {
     min-height: 100vh;
 }
 
-.submit-button, .like-btn {
+.submit-button {
     width: 250px;
     height: 60px;
     background-color: #666666;
@@ -79,7 +79,7 @@ input {
 
 .microphone-image {
     width: 90%;
-    height: auto;
+    /*height: auto;*/
     display: block;
     opacity: 50%;
   }
@@ -165,7 +165,7 @@ hr {
     overflow: hidden;
 }
 
-.card img {
+.image {
     width: 40%; /* Use 100% to ensure the image takes the full width of its container */
     height: auto; /* Maintain the aspect ratio */
     object-fit: cover;
@@ -176,6 +176,7 @@ hr {
     box-sizing: border-box; /* Include padding in the total width */
 }
 
+
 .card-content {
     display: flex;
     flex-direction: column;
@@ -185,25 +186,41 @@ hr {
 }
 
 .song-info {
-    text-align: left; /* Align song info text to the left */
-}
+    text-align: left; /* Align song info text to the left */}
 
 .info-and-button {
     display: flex;
     justify-content: space-between; /* Put song info and like button at each end */
     width: 100%; /* Make sure it takes the full width */
-    padding-left: 60px;
-    margin-top: 20px;
+    margin: auto;
 }
 
 .like-btn {
-    display: block;
-    margin: 10px auto;
+    border: none; 
+    background: none;
+}
+
+.heart {
+    padding: 0; 
+    margin: 0; 
+    display: unset; 
+    width: 60px;
+}
+
+.liked {
+    filter: grayscale(0%);
+}
+
+.song-link {
+    width: 200px;
+    height: 50px;
+    color: #fff;
+    background-color: #45048c; /* Change the button color */
+    font-family: "Futura", sans-serif; /* Set the font family */
     cursor: pointer;
     font-size: 20px;
-    font-family: "Futura", sans-serif; /* Set the font family */
-    color: #fff;
-    background-color: #333; /* Set the font color */
+    cursor: pointer;
+    margin: 5px; /* Add margin between buttons if needed */
 }
 
 .liked {

@@ -8,21 +8,18 @@
 
     <!-- //for animations -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-    <meta name= "viewport" content= "width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src = "js/server.js" defer> </script>
   </head>
 
   <body class = "page">
-    
+
     <!-- logo/navigation/header -->
     <header>
       <div id = "header-text">
         <nav>
           <div id = "link1"> 
             <a href = "#search" onclick="hideResults()"> Search Covers </a>
-          </div>
-          <div id = "link2"> 
-            <a href = "#results" onclick="showResults()"> Results </a>
           </div>
           <div id = "link3">
             <a id = "liked" href = "html/liked.html"> Liked Songs </a>
@@ -84,39 +81,41 @@
 
           <!-- card 1 -->
           <div class="card animate__animated animate__fadeInLeft">
-            <img class = "image" src="assets/taylorswift.png" alt="Loading GIF">
+            <img class = "image" src="assets/white.png" alt="Loading GIF">
             <div class="card-content">
               <div class = "info-and-button">
                 <div class = "song-info">
                   <h3 class = "title">Song Title 1</h3>
                   <p class = "artist">Artist 1</p>
                 </div>
-                  <button class="like-btn"> Like </button>
+                  <button class="like-btn">  
+                    <img class= "heart" src = "./assets/heart.png"/>
+                  </button>
               </div>
-              <audio controls>
-                    <source class = "link" src="song1_preview.mp3" type="audio/mp3">
-                    Your browser does not support the audio tag.
-              </audio>
+              <a class = "ext-link" href = "" target = "_blank">
+                <button class="song-link"> Listen Now! </button>
+              </a>
             </div>
           </div>
         
           <!-- card 2 -->
           <div class="card animate__animated animate__fadeInRight">
-            <img class = "image" src="assets/taylorswift.png" alt="Song 2">
+            <img class = "image" src="assets/white.png" alt="Song 2">
             <div class="card-content">
               <div class = "info-and-button">
                 <div class = "song-info">
                   <h3 class = "title" >Song Title 2</h3>
                   <p class = "artist" >Artist 2</p>
                 </div>
-                  <button class="like-btn"> Like </button>
-              </div>
-              <audio controls>
-                    <source class = "link" src="song2_preview.mp3" type="audio/mp3">
-                    Your browser does not support the audio tag.
-              </audio>
+                <button class="like-btn">  
+                  <img class= "heart" src = "./assets/heart.png"/>
+                </button>
             </div>
+            <a class = "ext-link" href = "" target = "_blank">
+              <button class="song-link"> Listen Now! </button>
+            </a>
           </div>
+        </div>
     
         </div>
     
@@ -125,37 +124,39 @@
          
           <!-- card 3 -->
           <div class="card animate__animated animate__fadeInLeft">
-            <img class = "image" src="assets/taylorswift.png" alt="Song 3">
+            <img class = "image" src="assets/white.png" alt="Song 3">
             <div class="card-content">
               <div class = "info-and-button">
                 <div class = "song-info">
                   <h3 class = "title" >Song Title 3</h3>
                   <p class = "artist" >Artist 3</p>
                 </div>
-                  <button class="like-btn"> Like </button>
-              </div>
-              <audio controls>
-                    <source class = "link" src="song3_preview.mp3" type="audio/mp3">
-                    Your browser does not support the audio tag.
-              </audio>
+                <button class="like-btn">  
+                  <img class= "heart" src = "./assets/heart.png"/>
+                </button>
             </div>
+            <a class = "ext-link" href = "" target = "_blank">
+              <button class="song-link"> Listen Now! </button>
+            </a>
           </div>
+        </div>
         
           <!-- card 4 -->
           <div class="card animate__animated animate__fadeInRight">
-            <img class = "image" src="assets/taylorswift.png" alt="Song 4">
+            <img class = "image" src="assets/white.png" alt="Song 4">
             <div class="card-content">
               <div class = "info-and-button">
                 <div class = "song-info">
                   <h3 class = "title" >Song Title 4</h3>
                   <p class = "artist" >Artist 4</p>
                 </div>
-                  <button class="like-btn"> Like </button>
+                <button class="like-btn">  
+                  <img class= "heart" src = "./assets/heart.png"/>
+                </button>
               </div>
-              <audio controls>
-                    <source class = "link" src="song4_preview.mp3" type="audio/mp3">
-                    Your browser does not support the audio tag.
-              </audio>
+              <a class = "ext-link" href = "" target = "_blank">
+                <button class="song-link"> Listen Now! </button>
+              </a>
             </div>
           </div>
         </div>

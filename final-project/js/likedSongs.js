@@ -51,8 +51,8 @@ function songInfo(song) {
     let songArtist = song.element.querySelector(".artist-liked");
     songArtist.innerHTML = song.artist;
 
-    let songLink = song.element.querySelector(".link");
-    songLink.innerHTML = song.link;
+    let songLink = song.element.querySelector(".ext-link");
+    songLink.href = song.link;
 
 }
 
