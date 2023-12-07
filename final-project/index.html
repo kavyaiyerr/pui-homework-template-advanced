@@ -51,14 +51,22 @@
             </div>
   
             <!-- form -->
-            <div class = "user-options">
-  
-                <p class = "directions"> Fill out the fields below to find covers of your favorite songs! </p>
-                <input id = "song-title" type="text" placeholder="Song Title" required>
-                <input id = "song-artist" type="text" placeholder="Artist" required>
-                <button type = "submit" class = "submit-button" onclick = "Generate()">Generate</button> 
-  
-            </div>
+
+            <div class="user-options">
+              <p class="directions"> Fill out the fields below to find covers of your favorite songs! </p>
+          
+              <div id = "title" class="form-field">
+                  <label for="song-title"> Song Title:</label>
+                  <input id="song-title" type="text" placeholder="i.e. Hello " required>
+              </div>
+          
+              <div class="form-field">
+                  <label for="song-artist">Song Artist:</label>
+                  <input id="song-artist" type="text" placeholder="i.e. Adele " required>
+              </div>
+          
+              <button type="submit" class="submit-button" onclick="Generate()">Generate</button>
+          </div>
   
           </div>
   
@@ -81,15 +89,15 @@
 
           <!-- card 1 -->
           <div class="card animate__animated animate__fadeInLeft">
-            <img class = "image" src="assets/white.png" alt="Loading GIF">
+            <img class = "image" src="assets/white.png" alt="Loading Image">
             <div class="card-content">
               <div class = "info-and-button">
                 <div class = "song-info">
                   <h3 class = "title">Song Title 1</h3>
                   <p class = "artist">Artist 1</p>
                 </div>
-                  <button class="like-btn">  
-                    <img class= "heart" src = "./assets/heart.png"/>
+                  <button alt = "Button to like song" class="like-btn">  
+                    <img class= "heart" alt = "Like button image" src = "./assets/heart.png"/>
                   </button>
               </div>
               <a class = "ext-link" href = "" target = "_blank">
@@ -100,15 +108,15 @@
         
           <!-- card 2 -->
           <div class="card animate__animated animate__fadeInRight">
-            <img class = "image" src="assets/white.png" alt="Song 2">
+            <img class = "image" src="assets/white.png" alt="Loading Image">
             <div class="card-content">
               <div class = "info-and-button">
                 <div class = "song-info">
                   <h3 class = "title" >Song Title 2</h3>
                   <p class = "artist" >Artist 2</p>
                 </div>
-                <button class="like-btn">  
-                  <img class= "heart" src = "./assets/heart.png"/>
+                <button class="like-btn" alt = "Button to like song">  
+                  <img class= "heart" alt = "Like button image" src = "./assets/heart.png"/>
                 </button>
             </div>
             <a class = "ext-link" href = "" target = "_blank">
@@ -124,15 +132,15 @@
          
           <!-- card 3 -->
           <div class="card animate__animated animate__fadeInLeft">
-            <img class = "image" src="assets/white.png" alt="Song 3">
+            <img class = "image" src="assets/white.png" alt="Loading Image">
             <div class="card-content">
               <div class = "info-and-button">
                 <div class = "song-info">
                   <h3 class = "title" >Song Title 3</h3>
                   <p class = "artist" >Artist 3</p>
                 </div>
-                <button class="like-btn">  
-                  <img class= "heart" src = "./assets/heart.png"/>
+                <button class="like-btn" alt = "Button to like song">  
+                  <img class= "heart" alt = "Like button image" src = "./assets/heart.png"/>
                 </button>
             </div>
             <a class = "ext-link" href = "" target = "_blank">
@@ -143,15 +151,15 @@
         
           <!-- card 4 -->
           <div class="card animate__animated animate__fadeInRight">
-            <img class = "image" src="assets/white.png" alt="Song 4">
+            <img class = "image" src="assets/white.png" alt="Loading Image">
             <div class="card-content">
               <div class = "info-and-button">
                 <div class = "song-info">
                   <h3 class = "title" >Song Title 4</h3>
                   <p class = "artist" >Artist 4</p>
                 </div>
-                <button class="like-btn">  
-                  <img class= "heart" src = "./assets/heart.png"/>
+                <button class="like-btn" alt = "Button to like song">  
+                  <img class= "heart" alt = "Like button image" src = "./assets/heart.png"/>
                 </button>
               </div>
               <a class = "ext-link" href = "" target = "_blank">

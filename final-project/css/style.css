@@ -15,14 +15,11 @@ body {
     width: 250px;
     height: 60px;
     background-color: #666666;
+    margin-left: 88px;
 }
 
-
-input {
-    width: 250px;
-    height: 60px;
-    border: 5px solid rgb(255, 255, 255);
-
+#title {
+    margin-left: 8px;
 }
 
 
@@ -30,6 +27,12 @@ input {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+#col2 {
+    display: flex;
+    flex-direction: column;
+
 }
 
 #project-name {
@@ -151,6 +154,7 @@ hr {
 }
 
 .user-options {
+    text-align: center;
     margin: 6.25rem;
 }
 
@@ -195,6 +199,42 @@ hr {
     width: 100%; /* Make sure it takes the full width */
     margin: auto;
     padding: 20px;
+}
+
+/* style form field spacing */
+.form-field {
+    margin-bottom: 10px;
+}
+
+label {
+    color: #fff;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+/* style input fields */
+#search input {
+    width: 250px;
+    height: 60px;
+    border: 5px solid rgb(255, 255, 255);
+    font-family: "Futura", sans-serif;
+    color: #000;
+    margin: 0.5rem;
+}
+
+/* style the button */
+#search button {
+    width: 250px;
+    height: 60px;
+    background-color: #333;
+    color: #fff;
+    font-family: "Futura", sans-serif;
+    cursor: pointer;
+}
+
+/* style the button on hover */
+#search button:hover {
+    background-color: #45048c;
 }
 
 .like-btn {
@@ -254,12 +294,12 @@ audio {
     width: 150px;
     height: 40px;
     color: #fff;
-    background-color: #333; /* Change the button color */
-    font-family: "Futura", sans-serif; /* Set the font family */
+    background-color: #333;
+    font-family: "Futura", sans-serif; 
     cursor: pointer;
     font-size: 16px;
     cursor: pointer;
-    margin: 5px; /* Add margin between buttons if needed */
+    margin: 5px; 
 }
 
 .title-liked, .artist-liked, .remove {
@@ -274,20 +314,10 @@ audio {
     text-align: center;
 }
 
-#search input {
-    width: 250px;
-    height: 60px;
-    border: 5px solid rgb(255, 255, 255);
-    font-family: "Futura", sans-serif; /* Set the font family */
-    color: #000; /* Set the font color */
-    margin: 0.5rem;
-  }
-
 header {
     margin-top: 2rem;
 }
 
-  
 /*style the button */
 #search button {
     width: 250px;
