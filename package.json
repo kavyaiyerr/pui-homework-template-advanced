@@ -3,6 +3,7 @@
     "gh-pages": "^6.0.0"
   },
   "dependencies": {
+    "animate.css": "^4.1.1",
     "youtube-search": "^1.1.6"
   }
 }

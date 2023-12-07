@@ -26,11 +26,44 @@ function fetchSongs() {
 
 }
 
+let searchResults; //make globally accessible for regenerate function
+
+//function to populate cards
+function cardPopulate(cards, results) {
+    for (let i = 0; i < results.length && i < cards.length; i++) {
+
+        let result = results[i];
+        let card = cards[i];
+
+        //update thumbnail
+        let thumbnailUrl = result.snippet.thumbnails.medium.url;
+        card.querySelector('.image').src = thumbnailUrl;
+        console.log(card.querySelector('.image').src);
+        card.querySelector('.image').alt = `Song ${i + 1}`;
+
+
+        //update title and channel title
+        let title = result.snippet.title;
+        let channelTitle = result.snippet.channelTitle;
+        card.querySelector('.title').textContent = title;
+        card.querySelector('.artist').textContent = channelTitle;
+
+        //update image alt text
+        card.querySelector('.image').alt = "Thumbnail of" + title + "by" + channelTitle;
+
+
+        //update audio source
+        //const audioSource = `https://www.youtube.com/watch?v=${result.id.videoId}`;
+        //card.querySelector('.link').src = audioSource;
+    }
+
+}
+
 function Generate() {    
     showResults();
     // Call fetchSongs and handle the resolved data
     fetchSongs().then(function(data) {
-        searchResults = data.items;
+        searchResults = Array.from(data.items); //make a copy of array since will be reordering
         if (searchResults.length == 0) {
             document.getElementById('no-results').style.display = "block";
             document.getElementById('allcards').style.display = "none";
@@ -39,34 +72,13 @@ function Generate() {
         else {
             //populate cards
             let allCards = document.querySelectorAll('.card');
-            console.log(allCards);
+            cardPopulate(allCards, searchResults);
 
-            for (let i = 0; i < searchResults.length && i < allCards.length; i++) {
-                let result = searchResults[i];
-                let card = allCards[i];
-                console.log(card);
-
-                //update thumbnail
-                let thumbnailUrl = result.snippet.thumbnails.medium.url;
-                card.querySelector('.image').src = thumbnailUrl;
-                card.querySelector('.image').alt = `Song ${i + 1}`;
-
-
-                //update title and channel title
-                let title = result.snippet.title;
-                let channelTitle = result.snippet.channelTitle;
-                card.querySelector('.title').textContent = title;
-                card.querySelector('.artist').textContent = channelTitle;
-
-                //update image alt text
-                card.querySelector('.image').alt = "Thumbnail of" + title + "by" + channelTitle;
-
-
-                //update audio source
-                //const audioSource = `https://www.youtube.com/watch?v=${result.id.videoId}`;
-                //card.querySelector('.link').src = audioSource;
         }
-        }
+
+        //at this point first four items have been displayed, can move to end of array
+        let moved = searchResults.splice(0, 4);
+        searchResults.push(moved);
 
     })
 
@@ -116,8 +128,6 @@ class Song {
 //like button actions
 let likeButtons = document.querySelectorAll('.like-btn');
 
-console.log(likeButtons)
-
 // Add event listeners to all like buttons
 likeButtons.forEach(button => {
     button.addEventListener('click', likeSong);
@@ -161,4 +171,11 @@ function likeSong(element) {
     //update songs in local storage
     updateSongs();
 
+}
+
+function regenerate() {
+    let moved = searchResults.splice(0, 4); 
+    searchResults.concat(moved);
+    let allCards = document.querySelectorAll('.card');
+    cardPopulate(allCards, searchResults);
 }

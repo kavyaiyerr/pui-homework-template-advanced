@@ -5,6 +5,9 @@
     <title> melodyMatch </title>
     <meta charset= "UTF-8">
     <link rel= "stylesheet" href = "css/style.css">
+
+    <!-- //for animations -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <meta name= "viewport" content= "width=device-width, initial-scale=1">
     <script src = "js/server.js" defer> </script>
   </head>
@@ -79,8 +82,8 @@
         <div class = "row">
 
           <!-- card 1 -->
-          <div class="card" id = "first-card">
-            <img class = "image" src="assets/taylorswift.png" alt="Song 1">
+          <div class="card animate__animated animate__fadeInLeft">
+            <img class = "image" src="assets/taylorswift.png" alt="Loading GIF">
             <div class="card-content">
               <div class = "info-and-button">
                 <div class = "song-info">
@@ -97,7 +100,7 @@
           </div>
         
           <!-- card 2 -->
-          <div class="card">
+          <div class="card animate__animated animate__fadeInRight">
             <img class = "image" src="assets/taylorswift.png" alt="Song 2">
             <div class="card-content">
               <div class = "info-and-button">
@@ -108,7 +111,7 @@
                   <button class="like-btn"> Like </button>
               </div>
               <audio controls>
-                    <source src="song2_preview.mp3" type="audio/mp3">
+                    <source class = "link" src="song2_preview.mp3" type="audio/mp3">
                     Your browser does not support the audio tag.
               </audio>
             </div>
@@ -120,7 +123,7 @@
         <div class = "row">
          
           <!-- card 3 -->
-          <div class="card">
+          <div class="card animate__animated animate__fadeInLeft">
             <img class = "image" src="assets/taylorswift.png" alt="Song 3">
             <div class="card-content">
               <div class = "info-and-button">
@@ -131,14 +134,14 @@
                   <button class="like-btn"> Like </button>
               </div>
               <audio controls>
-                    <source src="song3_preview.mp3" type="audio/mp3">
+                    <source class = "link" src="song3_preview.mp3" type="audio/mp3">
                     Your browser does not support the audio tag.
               </audio>
             </div>
           </div>
         
           <!-- card 4 -->
-          <div class="card">
+          <div class="card animate__animated animate__fadeInRight">
             <img class = "image" src="assets/taylorswift.png" alt="Song 4">
             <div class="card-content">
               <div class = "info-and-button">
@@ -149,7 +152,7 @@
                   <button class="like-btn"> Like </button>
               </div>
               <audio controls>
-                    <source src="song4_preview.mp3" type="audio/mp3">
+                    <source class = "link" src="song4_preview.mp3" type="audio/mp3">
                     Your browser does not support the audio tag.
               </audio>
             </div>
@@ -160,7 +163,7 @@
 
   
       <div class = "results-buttons">
-        <button class="regen-btn" onclick="regenerateSong()"> Regenerate </button>
+        <button class="regen-btn" onclick="regenerate()"> Regenerate </button>
         <button class="restart-btn" onclick="hideResults()"> Restart </button>
       </div>
     </section>
