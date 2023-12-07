@@ -5,7 +5,6 @@
 body {
     font-family: "Futura", sans-serif;
     margin: 0;
-    display: flex;
     align-items: center;
     justify-content: center;
     background: linear-gradient(to bottom, #83a2b3, #8C7DBB, #dfba9a); 
@@ -26,12 +25,6 @@ input {
 
 }
 
-.page {
-    display: flex;
-    flex-direction: column;
-    align-items: center; 
-    justify-content: center; 
-}
 
 #col1 {
     display: flex;
@@ -67,20 +60,20 @@ input {
     position: relative;
     padding: 0.625rem;
     display: flex;
-    justify-content: center; /* Center the text horizontally */
-    align-items: center; /* Center the text vertically */
+    justify-content: center; /*center the text horizontally */
+    align-items: center; /*center the text vertically */
     background-color: rgba(255, 255, 255, 0.3);
-    z-index: 1; /* Set the z-index to make sure it appears above the image */
+    z-index: 1; /*set the z-index to make sure it appears above the image */
     text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add drop shadow */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /*add drop shadow */
   }
 
 .left-rectangle {
     width: 31.25rem;
     height: 5.625rem;
-    border-left: 5.625rem solid rgb(255, 255, 255); /* Right border for the left rectangle */
-    outline: 0.625rem solid rgb(255, 255, 255); /* Thick left stroke for the left rectangle */
-    outline-offset: -0.125; /* Adjust the offset to align with the border */
+    border-left: 5.625rem solid rgb(255, 255, 255); /*right border for the left rectangle */
+    outline: 0.625rem solid rgb(255, 255, 255); /*thick left stroke for the left rectangle (stylistic choice)*/
+    outline-offset: -0.125; /*adjust the offset to align with the border */
  } 
 
 
@@ -135,6 +128,13 @@ hr {
     width: 100%; /* Set the line to span the entire width */
     border: 1px solid #ffffff; /* Set the color of the line */
     margin-bottom: 8rem;
+}
+
+.entire_page {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center; 
 }
 
 
@@ -234,6 +234,14 @@ audio {
     margin: 5px; /* Add margin between buttons if needed */
 }
 
+.title-liked, .artist-liked, .remove {
+    margin-top: 1.5rem; 
+  }
+
+.song-info-liked {
+    text-align: center;
+}
+
 #search input {
     width: 250px;
     height: 60px;
@@ -242,6 +250,10 @@ audio {
     color: #000; /* Set the font color */
     margin: 0.5rem;
   }
+
+header {
+    margin-top: 2rem;
+}
 
   
 /*style the button */

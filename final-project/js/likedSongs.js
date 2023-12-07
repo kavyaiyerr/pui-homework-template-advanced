@@ -45,10 +45,10 @@ function songInfo(song) {
     songImage.src = song.image;
     songImage.alt = song.imageAlt;
 
-    let songTitle = song.element.querySelector(".title");
+    let songTitle = song.element.querySelector(".title-liked");
     songTitle.innerHTML = song.title;
 
-    let songArtist = song.element.querySelector(".artist");
+    let songArtist = song.element.querySelector(".artist-liked");
     songArtist.innerHTML = song.artist;
 
     let songLink = song.element.querySelector(".link");

@@ -13,26 +13,27 @@
   </head>
 
   <body class = "page">
+    
     <!-- logo/navigation/header -->
+    <header>
+      <div id = "header-text">
+        <nav>
+          <div id = "link1"> 
+            <a href = "#search" onclick="hideResults()"> Search Covers </a>
+          </div>
+          <div id = "link2"> 
+            <a href = "#results" onclick="showResults()"> Results </a>
+          </div>
+          <div id = "link3">
+            <a id = "liked" href = "html/liked.html"> Liked Songs </a>
+          </div>
+        </nav>
+      </div>
+
+      <hr>
+    </header>
 
     <div class = "parent">
-      <header>
-        <div id = "header-text">
-          <nav>
-            <div id = "link1"> 
-              <a href = "#search" onclick="hideResults()"> Search Covers </a>
-            </div>
-            <div id = "link2"> 
-              <a href = "#results" onclick="showResults()"> Results </a>
-            </div>
-            <div id = "link3">
-              <a id = "liked" href = "html/liked.html"> Liked Songs </a>
-            </div>
-          </nav>
-        </div>
-  
-        <hr>
-      </header>
   
       <!-- search page with form for user to enter -->
       <section id = "search">
