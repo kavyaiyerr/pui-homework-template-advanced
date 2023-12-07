@@ -81,8 +81,7 @@ body {
 
 
 .microphone-image {
-    width: 90%;
-    /*height: auto;*/
+    width: 87%;
     display: block;
     opacity: 50%;
   }
@@ -332,3 +331,30 @@ header {
 #search button:hover {
     background-color: #45048c; /* Change the button color */
     }
+
+/* media query to style smaller screens*/
+@media only screen and (max-width: 800px) {
+
+    #col1 {
+        order: 1; /* Change the order to move it to the top */
+        margin-bottom: 1rem; /* Add some space between the image and the form */
+      }
+    
+      #col2 {
+        order: 2; /* Change the order to move it below the image */
+      }
+    
+      #project-name {
+        margin: 2em; /* Adjust the margin to make it smaller */
+      }
+
+    /*make results stack vertically*/
+    .row {
+        flex-direction: column; /* Stack cards vertically */
+    }
+    
+    .card {
+        width: 100%; /* Make cards take full width */
+        margin: 10px; /* Add margin between stacked cards */
+    }
+}
