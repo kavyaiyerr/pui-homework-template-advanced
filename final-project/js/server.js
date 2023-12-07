@@ -163,7 +163,8 @@ function likeSong(element) {
     //get card information
     let card = element.target.closest('.card');
 
-    card.querySelector(".like-btn").classList.toggle('liked');
+    card.querySelector(".heart").classList.add('liked');
+    card.querySelector(".liked").classList.remove('heart');
 
     let image = card.querySelector('.image').src;
     let altText = card.querySelector('.image').alt;
