@@ -333,20 +333,20 @@ header {
     }
 
 /* media query to style smaller screens*/
-@media only screen and (max-width: 800px) {
+@media screen and (max-width: 1000px) {
 
-    #col1 {
-        order: 1; /* Change the order to move it to the top */
-        margin-bottom: 1rem; /* Add some space between the image and the form */
-      }
+    #search {
+        flex-direction: column;
+    }
+
+    .microphone-image {
+        width: 30%;
+    }
     
-      #col2 {
-        order: 2; /* Change the order to move it below the image */
-      }
-    
-      #project-name {
-        margin: 2em; /* Adjust the margin to make it smaller */
-      }
+    #project-name {
+
+    width: 10%; /* Adjust the margin to make it smaller */
+    }
 
     /*make results stack vertically*/
     .row {
