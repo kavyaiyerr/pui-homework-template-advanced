@@ -1,21 +1,27 @@
+//function to access YouTube data
 function fetchSongs() {
+    //search URL
     var URL="https://www.googleapis.com/youtube/v3/search";
+    //API key
     var key= 'AIzaSyCGr4-POpx4JwHQp1u62GkZxgVDL8vplNA';
 
-
+    //getting user entries from form fields
     let songTitle = document.getElementById('song-title').value;
     let artist = document.getElementById('song-artist').value;
+
+    //concatenating to create search query
     let searchquery = songTitle + 'by'+ artist + 'covers';
 
+    //search specifications
     var options = {
         part: 'snippet',
         key: key,
-        maxResults: 12,
+        maxResults: 12, //pulling in 12 results
         q: searchquery,
         type: 'video',
     }
 
-    // Return a promise that resolves with the data
+    //return a promise that resolves with the data
     return new Promise(function(resolve, reject) {
         $.getJSON(URL, options, function(data) {
             resolve(data);
@@ -26,21 +32,30 @@ function fetchSongs() {
 
 }
 
-let searchResults;
-let searchcounter = 0; //make globally accessible for regenerate function
+//make globally accessible for regenerate function
+let searchResults; //will store JSON with youtube data
+let searchcounter = 0; //counter for how many times regenerate is called (incremented by 4 each time, to display next 4 search results)
 
 //function to populate cards
 function cardPopulate(cards, results, initialsearchnumber) {
+
     for (let i = 0; i < cards.length; i++) {
+
+        //current search result from data
         let result = results[0];
+
+        //only enter first conditional if regenerate has been pressed enough times for counter to exceed array of data
         if (i + initialsearchnumber > results.length - 1){
+
+            //calculation to loop counter around to start at beginning of array again
             result = results[i + initialsearchnumber - results.length + 1];
-            console.log("redisplay");
         }
+
         else {
             result = results[i + initialsearchnumber];
-            console.log("first display");
         }
+
+        //current card
         let card = cards[i];
 
         //update thumbnail
@@ -70,10 +85,15 @@ function cardPopulate(cards, results, initialsearchnumber) {
 
 function Generate() {    
     showResults();
+
+    //back to initial search screen, no cards displayed yet, set counter back to 1
     searchcounter = 0;
-    // Call fetchSongs and handle the resolved data
+
+    //call fetchSongs and handle the resolved data
     fetchSongs().then(function(data) {
+
         searchResults = Array.from(data.items); //make a copy of array since will be reordering
+
         if (searchResults.length == 0) {
             document.getElementById('no-results').style.display = "block";
             document.getElementById('allcards').style.display = "none";
@@ -86,31 +106,37 @@ function Generate() {
 
         }
 
-        //at this point first four items have been displayed, can move to end of array
-        // let moved = searchResults.splice(0, 4);
-        // searchResults.push(moved);
-
     })
 
 }
 
 //functions to toggle the different sections on the home screen
 function hideResults() {
+
+    //grab each of the sections
     let section1 = document.querySelector('#search'); 
     let section2 = document.querySelector('#results'); 
+
+    //display search section, hide the results section
     section1.style.display = "flex";
     section2.style.display = "none";
 }
 
 function showResults() {
+
+    //grab each of the sections
     let section1 = document.querySelector('#search'); 
     let section2 = document.querySelector('#results'); 
+
+    //hide the search section
     section1.style.display = "none";
+
     //if form fields aren't filled display text
     if (document.getElementById('song-title').value.length == 0) {
         document.getElementById('no-results').style.display = "block";
         document.getElementById('allcards').style.display = "none";
     }
+
     //display section otherwise
     else {
         document.getElementById('no-results').style.display = "none";
@@ -124,7 +150,7 @@ function showResults() {
 
 //LIKING SONGS
 
-//song class
+//class definition for a song
 class Song {
     constructor(songTitle, songArtist, songImage, imageAlt, songLink) {
         this.title = songTitle;
@@ -163,16 +189,17 @@ function likeSong(element) {
     //get card information
     let card = element.target.closest('.card');
 
+    //change class to update button styling for a liked song
     card.querySelector(".heart").classList.add('liked');
     card.querySelector(".liked").classList.remove('heart');
 
+    //grab all information from the card
     let image = card.querySelector('.image').src;
     let altText = card.querySelector('.image').alt;
     let title = card.querySelector('.title').innerHTML;
     let artist = card.querySelector('.artist').innerHTML;
     let link = card.querySelector('.ext-link').href;
 
-    
     //create a new song instance
     let likedSong = new Song(title, artist, image, altText, link);
 
@@ -185,18 +212,12 @@ function likeSong(element) {
 }
 
 function regenerate() {
+
+    //first four cards have already been populate, want to display next 4
     searchcounter = searchcounter + 4;
-    // console.log("before changes" + searchResults)
-    // let moved = searchResults.splice(0, 4); 
-    // console.log("moved" + moved);
-    // console.log("searchResults 1" + searchResults);
 
-    // //add moved elements to end of og array
-    // for (let i = 0; i < moved.length; i++) {
-    //     searchResults.push(moved[i]);
-    // }
-
-    // console.log("searchResults 2" + searchResults);
     let allCards = document.querySelectorAll('.card');
+
+    //populate cards
     cardPopulate(allCards, searchResults, searchcounter);
 }

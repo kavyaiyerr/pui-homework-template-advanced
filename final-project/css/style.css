@@ -1,3 +1,6 @@
+/* selectors  by specificity & alphabetically*/
+
+
 * {
     box-sizing: border-box;
 }
@@ -11,53 +14,105 @@ body {
     min-height: 100vh;
 }
 
-.submit-button {
-    width: 250px;
-    height: 60px;
-    background-color: #666666;
-    margin-left: 88px;
+h1 {color: #ffffff;
+    font-size: 60px;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Add drop shadow to the text */
+
 }
 
-#title {
-    margin-left: 8px;
+header {
+    margin-top: 2rem;
 }
 
+hr {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%; /* Set the line to span the entire width */
+    border: 1px solid #ffffff; /* Set the color of the line */
+    margin-bottom: 8rem;
+}
 
-#col1 {
+label {
+    color: #fff;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+nav {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    justify-content: space-around;
+    position: relative; 
 }
 
-#col2 {
+/* styling for all cards on the results page */
+.card {
+    width: 600px;
+    height: 500px;
+    margin: 20px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+
+.card-content {
     display: flex;
     flex-direction: column;
-
+    align-items: center;
+    padding: 15px;
+    text-align: center;
 }
 
-#project-name {
-    display: flex;
-    margin: 6.25em;
-}
-
-#search, #results {
-    width: 100%;
-    padding: 2rem;
-}
-
-#results {
-    display: none;
-}
-
-#search {
-    display: flex;
-}
 
 .directions {
     color: #ffffff;
     font-size: 24px;
 
 }
+
+.entire_page {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center; 
+}
+
+/* style form field spacing */
+.form-field {
+    margin-bottom: 10px;
+}
+
+.heart {
+    padding: 0; 
+    margin: 0; 
+    display: unset; 
+    width: 60px;
+    filter: grayscale(100%);
+}
+
+.image {
+    width: 480px;
+    height: 360px;
+    height: auto; /* maintain the aspect ratio */
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+    padding: 40px; /* adjust padding as needed */
+    padding-bottom: 0px;
+    box-sizing: border-box; /* include padding in the total width */
+}
+
+.info-and-button {
+    display: flex;
+    justify-content: space-between; /* Put song info and like button at each end */
+    width: 100%; /* make sure it takes the full width */
+    margin: auto;
+    padding: 20px;
+}
+
 
 .left-rectangle, .right-rectangle {
     position: relative;
@@ -79,12 +134,28 @@ body {
     outline-offset: -0.125; /*adjust the offset to align with the border */
  } 
 
+.like-btn {
+    border: none; 
+    background: none;
+}
+
+.liked {
+    padding: 0; 
+    margin: 0; 
+    display: unset; 
+    width: 60px;
+    filter: grayscale(0%);
+}
 
 .microphone-image {
     width: 87%;
     display: block;
     opacity: 50%;
-  }
+}
+
+.no-results {
+    display: none;
+}
 
 .page-title {
     color: #ffffff;
@@ -93,193 +164,9 @@ body {
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Add drop shadow to the text */
 }
 
-.no-results {
-    display: none;
-}
-
-h1 {color: #ffffff;
-    font-size: 60px;
-    font-weight: bold;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Add drop shadow to the text */
-
-}
-
-nav {
-    display: flex;
-    justify-content: space-around;
-    position: relative; 
-}
-
 .parent {
     display: flex;
     flex-direction: column;
-}
-
-nav a {
-    text-decoration: none;
-    color: #ffffff;
-    font-size: 20px;
-    margin: 0px; /* Adjust the margin as needed to create space between the links */
-    padding: 10px;
-}
-
-hr {
-    position: relative;
-    top: 0;
-    left: 0;
-    width: 100%; /* Set the line to span the entire width */
-    border: 1px solid #ffffff; /* Set the color of the line */
-    margin-bottom: 8rem;
-}
-
-.entire_page {
-    display: flex;
-    flex-direction: column;
-    align-items: center; 
-    justify-content: center; 
-}
-
-
-.right-rectangle {
-    width: 21.875rem;
-    height: 5.625rem;
-    border: 0.625rem solid rgb(255, 255, 255);
-}
-
-.row {
-    display: flex;
-    justify-content: space-evenly;
-    width: 100%;
-}
-
-.user-options {
-    text-align: center;
-    margin: 6.25rem;
-}
-
-
-.card {
-    width: 600px;
-    height: 500px;
-    margin: 20px;
-    background-color: rgba(255, 255, 255, 0.5);
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-}
-
-.image {
-    width: 480px;
-    height: 360px;
-    height: auto; /* Maintain the aspect ratio */
-    object-fit: cover;
-    display: block;
-    margin: 0 auto;
-    padding: 40px; /* Adjust padding as needed */
-    padding-bottom: 0px;
-    box-sizing: border-box; /* Include padding in the total width */
-}
-
-
-.card-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 15px;
-    text-align: center;
-}
-
-.song-info {
-    text-align: left; /* Align song info text to the left */}
-
-.info-and-button {
-    display: flex;
-    justify-content: space-between; /* Put song info and like button at each end */
-    width: 100%; /* Make sure it takes the full width */
-    margin: auto;
-    padding: 20px;
-}
-
-/* style form field spacing */
-.form-field {
-    margin-bottom: 10px;
-}
-
-label {
-    color: #fff;
-    font-size: 16px;
-    margin-bottom: 5px;
-}
-
-/* style input fields */
-#search input {
-    width: 250px;
-    height: 60px;
-    border: 5px solid rgb(255, 255, 255);
-    font-family: "Futura", sans-serif;
-    color: #000;
-    margin: 0.5rem;
-}
-
-/* style the button */
-#search button {
-    width: 250px;
-    height: 60px;
-    background-color: #333;
-    color: #fff;
-    font-family: "Futura", sans-serif;
-    cursor: pointer;
-}
-
-/* style the button on hover */
-#search button:hover {
-    background-color: #45048c;
-}
-
-.like-btn {
-    border: none; 
-    background: none;
-}
-
-.heart {
-    padding: 0; 
-    margin: 0; 
-    display: unset; 
-    width: 60px;
-    filter: grayscale(100%);
-}
-
-.heart:hover {
-    filter: grayscale(0%);
-}
-
-.liked {
-    padding: 0; 
-    margin: 0; 
-    display: unset; 
-    width: 60px;
-    filter: grayscale(0%);
-}
-
-.song-link {
-    width: 200px;
-    height: 50px;
-    color: #fff;
-    background-color: #45048c; /* Change the button color */
-    font-family: "Futura", sans-serif; /* Set the font family */
-    cursor: pointer;
-    font-size: 20px;
-    cursor: pointer;
-    margin: 5px; /* Add margin between buttons if needed */
-}
-
-.liked {
-    color: #e74c3c;
-}
-
-audio {
-    width: 100%;
-    margin-top: 10px;
 }
 
 .results-buttons {
@@ -301,31 +188,131 @@ audio {
     margin: 5px; 
 }
 
-.title-liked, .artist-liked, .remove {
-    margin-top: 1rem; 
-  }
-
-.remove:hover {
-    text-decoration: underline;
+.right-rectangle {
+    width: 21.875rem;
+    height: 5.625rem;
+    border: 0.625rem solid rgb(255, 255, 255);
 }
+
+/* have 2 cards next to each other in each row of results display */
+.row {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+ /* align song info text to the left */
+.song-info {
+    text-align: left;
+}
+
 
 .song-info-liked {
     text-align: center;
 }
 
-header {
-    margin-top: 2rem;
+.song-link {
+    width: 200px;
+    height: 50px;
+    color: #fff;
+    background-color: #45048c; 
+    font-family: "Futura", sans-serif; 
+    cursor: pointer;
+    font-size: 20px;
+    cursor: pointer;
+    margin: 5px; 
 }
 
-/*style the button */
+.submit-button {
+    width: 250px;
+    height: 60px;
+    background-color: #666666;
+    margin-left: 88px;
+}
+
+
+.title-liked, .artist-liked, .remove {
+    margin-top: 1rem; 
+  }
+
+
+.user-options {
+    text-align: center;
+    margin: 6.25rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 20px;
+    margin: 0px; /* Adjust the margin as needed to create space between the links */
+    padding: 10px;
+}
+
+
+#col1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#col2 {
+    display: flex;
+    flex-direction: column;
+
+}
+
+#project-name {
+    display: flex;
+    margin: 6.25em;
+}
+
+
+#results {
+    display: none;
+}
+
+#search {
+    display: flex;
+}
+
+#search, #results {
+    width: 100%;
+    padding: 2rem;
+}
+
+#title {
+    margin-left: 8px;
+}
+
+
+/* style input fields */
+#search input {
+    width: 250px;
+    height: 60px;
+    border: 5px solid rgb(255, 255, 255);
+    font-family: "Futura", sans-serif;
+    color: #000;
+    margin: 0.5rem;
+}
+
+/* style the button */
 #search button {
     width: 250px;
     height: 60px;
-    background-color: #333; /* Change the button color */
-    color: #fff; /* Set the text color */
-    font-family: "Futura", sans-serif; /* Set the font family */
+    background-color: #333;
+    color: #fff;
+    font-family: "Futura", sans-serif;
     cursor: pointer;
-    }
+}
+
+.heart:hover {
+    filter: grayscale(0%);
+}
+
+.remove:hover {
+    text-decoration: underline;
+}
 
 /*style the button */
 #search button:hover {

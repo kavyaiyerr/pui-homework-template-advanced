@@ -40,6 +40,7 @@
           </div>
   
           <div id = "col2">
+
             <!-- melody match header -->
             <div id = "project-name">
               <div class= "left-rectangle">
@@ -51,15 +52,16 @@
             </div>
   
             <!-- form -->
-
             <div class="user-options">
               <p class="directions"> Fill out the fields below to find covers of your favorite songs! </p>
           
+              <!-- field to enter song -->
               <div id = "title" class="form-field">
                   <label for="song-title"> Song Title:</label>
                   <input id="song-title" type="text" placeholder="i.e. Hello " required>
               </div>
           
+              <!-- field to enter artist -->
               <div class="form-field">
                   <label for="song-artist">Song Artist:</label>
                   <input id="song-artist" type="text" placeholder="i.e. Adele " required>
@@ -118,12 +120,12 @@
                 <button class="like-btn" alt = "Button to like song">  
                   <img class= "heart" alt = "Like button image" src = "./assets/heart.png"/>
                 </button>
+              </div>
+              <a class = "ext-link" href = "" target = "_blank">
+                <button class="song-link"> Listen Now! </button>
+              </a>
             </div>
-            <a class = "ext-link" href = "" target = "_blank">
-              <button class="song-link"> Listen Now! </button>
-            </a>
           </div>
-        </div>
     
         </div>
     
@@ -149,36 +151,38 @@
           </div>
         </div>
         
-          <!-- card 4 -->
-          <div class="card animate__animated animate__fadeInRight">
-            <img class = "image" src="assets/white.png" alt="Loading Image">
-            <div class="card-content">
-              <div class = "info-and-button">
-                <div class = "song-info">
-                  <h3 class = "title" >Song Title 4</h3>
-                  <p class = "artist" >Artist 4</p>
-                </div>
-                <button class="like-btn" alt = "Button to like song">  
-                  <img class= "heart" alt = "Like button image" src = "./assets/heart.png"/>
-                </button>
+        <!-- card 4 -->
+        <div class="card animate__animated animate__fadeInRight">
+          <img class = "image" src="assets/white.png" alt="Loading Image">
+          <div class="card-content">
+            <div class = "info-and-button">
+              <div class = "song-info">
+                <h3 class = "title" >Song Title 4</h3>
+                <p class = "artist" >Artist 4</p>
               </div>
-              <a class = "ext-link" href = "" target = "_blank">
-                <button class="song-link"> Listen Now! </button>
-              </a>
+              <button class="like-btn" alt = "Button to like song">  
+                <img class= "heart" alt = "Like button image" src = "./assets/heart.png"/>
+              </button>
             </div>
+            <a class = "ext-link" href = "" target = "_blank">
+              <button class="song-link"> Listen Now! </button>
+            </a>
           </div>
         </div>
-
       </div>
 
-  
+      </div>
+         
+      <!-- buttons at bottom of results page -->
       <div class = "results-buttons">
         <button class="regen-btn" onclick="regenerate()"> Regenerate </button>
         <button class="restart-btn" onclick="hideResults()"> Restart </button>
       </div>
     </section>
   </div>
-    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
-    <script src="https://apis.google.com/js/client.js?onload=googleApiClientReady">   </script>
+
+  <!-- other js references (jquery & api) -->
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+  <script src="https://apis.google.com/js/client.js?onload=googleApiClientReady">   </script>
   </body>
 </html>

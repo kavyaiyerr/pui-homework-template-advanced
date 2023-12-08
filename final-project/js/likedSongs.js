@@ -26,6 +26,7 @@ function showResults() {
     }
 }
 
+//class definition for a song
 class Song {
     constructor(songTitle, songArtist, songImage, imageAlt, songLink) {
         this.title = songTitle;
