@@ -335,26 +335,31 @@ header {
 /* media query to style smaller screens*/
 @media screen and (max-width: 1000px) {
 
+    /*search screen styling */
     #search {
-        flex-direction: column;
+        flex-direction: column; /* stack everything vertically */
     }
 
     .microphone-image {
         width: 30%;
     }
     
-    #project-name {
-
-    width: 10%; /* Adjust the margin to make it smaller */
+    .page-title {
+        font-size: 250%;
     }
 
     /*make results stack vertically*/
     .row {
-        flex-direction: column; /* Stack cards vertically */
+        flex-direction: column; /* stack cards vertically */
     }
     
     .card {
-        width: 100%; /* Make cards take full width */
-        margin: 10px; /* Add margin between stacked cards */
+        width: 100%; /* make cards take full width */
+        margin: 10px; /* add margin between stacked cards */
+    }
+
+    #project-name {
+        margin: 3em;
+        margin-top: 8em;
     }
 }
